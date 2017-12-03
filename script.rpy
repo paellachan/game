@@ -16,23 +16,44 @@ label start:
     # images directory to show it.
 
     scene bg_comisaria
+    with dissolve
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
     # m "{i}{/i}" m "" wr""
+    
+    play music "comisary.ogg" fadeout 1.0 fadein 8.0
+    image top_text = ParameterizedText 
+    show text "Comisaria del distrito, 19:42":
+    xalign 0.1 yalign 0.1
+
+    with dissolve
+    pause 2
+    hide text
+    with dissolve
+    
+    pause 2
 
    
     m "{i}Son casi las ocho y ya no hay ni dios en la comisaría. Corro hacia la salida como si una mano extraña fuese a cogerme por detrás, ha sido un lunes tranquilo. Demasiado tranquilo.{/i}"
     m "{i}Estos días me ponen nervioso. Os sonará raro, pero… ¿Sabéis esa sensación? Esa ansiedad punzante que sientes en el cogote cuando todo va bien y eres feliz y parece que estés contando los segundos antes de que todo se vaya a la mierda.{/i}"
     m "{i}Bueno, cojo el paraguas y la chaqueta ¡Este poli tiene una cita! El otoño ha llegado de repente. Lleva todo el día lloviendo y el olor de las cloacas desbordadas inunda las calles encharcadas.{/i}"
     m "{i}¡Genial! Es la noche perfecta para una cenita romántica en el Dorsia. No paro de pensar en que voy a dejarme 200 pavos mientras como con los pies oliéndome a mierda.{/i}"
-    
+    show jones_normal
+    with dissolve
     agente "¡Hey, Jeff! ¿Vas a casa?"
     m "{i}Un escalofrío en la nuca. Tengo un mal presentimiento.{/i}"
     agente "La inspectora te estaba buscando, no sé qué quiere."
+    with hpunch
     m "¿Porqué no le has dicho que ya me había ido?"
+    show jones_sorry
+    with dissolve
+    hide jones_normal
     agente "Lo siento, tio."
+    hide jones_sorry
+    with dissolve
+
     
     m "{i}Os lo estaba comentando hace un segundo ¿no? Me pregunto qué demonios quiere Wright a las ocho de la maldita tarde de un lunes tormentoso y oscuro.{/i}"
     m "{i}Camino a zancadas violentas hacia su escritorio donde la encuentro sellando unos papeles de forma mecánica.{/i}"
@@ -45,11 +66,15 @@ label start:
     m "{i}Maldita sea Victoria ¡Hazme caso!{/i}"
     
     show wright_normal
+    with dissolve
+
     wr "Disculpe, Jefferson. Estaba intentando acabar de clasificar estos documentos."
     wr "Sí, le estaba buscando. Perdone por avisarle a estas horas, pero ha sido algo repentino ¿Se iba ya?"
     m "{i}La inspectora parecía algo cansada. Probablemente llevase en la comisaría más de 14 horas.{/i}"
     m "Eso es, ya salía por la puerta. Tengo algo de prisa."
     show wright_happy
+    with dissolve
+
     wr "¿Tiene usted algo que hacer esta noche?¿Algún compromiso?"
     m "{i}Ahora estaba seguro. Ya podía ir cancelando esa reserva. La inspectora Wright, también conocida como SubZero, haciendo referencia a su desarrollada calidez emocional, nunca hacía preguntas personales.{/i}"
    
@@ -63,6 +88,7 @@ menu:
 label dorsia:  
     m "¿Sabe dónde es, no? Ese sitio tan caro donde los camareros llevan esas pajaritas horteras de los 80. Hace un par de meses que estoy viendo a una chica, ya sabe a lo que me refiero ¿no?"
     show wright_mad
+    with dissolve
     wr "Vaya, eso es maravilloso detective. Celebro que comparta conmigo estas confesiones tan íntimas. Después de todo llevamos ya seis años trabajando juntos."
     m "{i}Ese tono sarcástico me heló la sangre. A ella no le interesaba otra respuesta que no fuese mi disponibilidad total para quedarme a hacer horas extras no pagadas hasta dios sabe cuando.{/i}"
     m "Bueno¿Qué necesita? Tengo algo de prisa."
@@ -89,6 +115,9 @@ label borde:
 label continuar:  
     show wright_normal
     m "¿Es una broma? Mira Victoria, llevo aquí desde las 8 de la mañana. "
+    pause 2
+    stop music fadeout 5.0 
+    play music "tension.ogg" fadeout 1.0 fadein 5.0
     m "{i}El despacho está algo vacío, aunque muy ordenado. La verdad, conociendo a Victoria me sorprendería que fuese de otra manera. Hay un olor familiar y agradable ¿Un ambientador quizá? {/i}"
     wr "Preste atención Jefferson. ¿Ha visto hoy las noticias?"
     m "Sí, esta mañana ¿Porqué?No ha pasado nada¿No? Bueno, la ha palmado el banquero ese, el del Bank of SeaShore. Un ataque al corazón o algo así."
