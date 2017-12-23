@@ -24,14 +24,7 @@ label start:
     # m "{i}{/i}" m "" wr""
     
     play music "comisary.ogg" fadeout 1.0 fadein 8.0
-    image top_text = ParameterizedText 
-    show text "Comisaria del distrito, 19:42":
-    xalign 0.1 yalign 0.1
-
-    with dissolve
-    pause 2
-    hide text
-    with dissolve
+ 
     
     pause 2
 
@@ -43,14 +36,42 @@ label start:
     show jones_normal
     with dissolve
     agente "¡Hey, Jeff! ¿Vas a casa?"
+    pause 1
+    m "{i}El agente Theo Jones, estuvimos trabajando dos años juntos, justo cuando entré en el cuerpo. Es buen tío.{/i}"
+    m "Pues sí, ya estaba saliendo. Tengo un poco de prisa ¿Necesitas algo?"
+    agente "Uy...¿Prisa? Qué pasa, ¿Tienes otra cita? ¿Cual es, la tercera o al cuarta de este mes?"
+    m "No te metas conmigo...Soy un policía joven y atractivo tío, dejame disfrutar de los pequeños placeres de la vida. No envidies mi libertad ahora que eres un hombre casado. Me merezco una recompensa después de pasar el día entre fiambres."
+    agente "Para nada. Creo que deberias sentar la cabeza, ya tenemos suficientes preocupaciones en el curro."
+    agente "Bueno, lo que iba a decirte..."
     m "{i}Un escalofrío en la nuca. Tengo un mal presentimiento.{/i}"
+    pause 1
     agente "La inspectora te estaba buscando, no sé qué quiere."
     with hpunch
     m "¿Porqué no le has dicho que ya me había ido?"
     show jones_sorry
     with dissolve
     hide jones_normal
-    agente "Lo siento, tio."
+    agente "Lo siento tío."
+    agente "Seguro que no es nada."
+    m "¿Apostamos a que hoy duermo aquí?"
+    agente "Wright es un hueso duro de roer ¿eh? Recuerdo la primera vez que la vi, esa mirada gélida y esa expresión robótica."
+menu:
+    "Respuesta políticamente correcta.":
+        jump wright1
+
+    "Respuesta de gallito.":
+        jump wright2
+        
+label wright1:  
+    m "No es para tanto, no te voy a mentir, es una persona estricta, pero hace bien su trabajo. He aprendido mucho de ella."
+    jump continuacion1
+    
+label wright2:  
+    m "¡Y que lo digas! Creo que es ella quien de verdad necesita una cita, a ver si se relaja un poco."
+    jump continuacion1
+    
+label continuacion1:  
+    agente "¡Ánimos!"
     hide jones_sorry
     with dissolve
 
@@ -65,7 +86,7 @@ label start:
     m "..."
     m "{i}Maldita sea Victoria ¡Hazme caso!{/i}"
     
-    show wright_normal
+    show wright normal
     with dissolve
 
     wr "Disculpe, Jefferson. Estaba intentando acabar de clasificar estos documentos."
