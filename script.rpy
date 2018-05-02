@@ -3,10 +3,12 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define m = Character("")
+define m = Character("ddd", image="reilly")
 define md = Character("Detective Reilly")
 define wr = Character("Inspector Wright")
 define agente = Character("Officer Jones")
+
+
 
 # The game starts here.
 
@@ -29,15 +31,16 @@ label start:
     
     pause 2
 
-
-    m "{i}It's almost 8 pm and of course there’s not a soul in the office. I wonder why am still here. Oh, I remember now… I was caged by my darling boss.{/i}"
+    
+    m normal"{i}It's almost 8 pm and of course there’s not a soul in the office. I wonder why am still here. Oh, I remember now… I was caged by my darling boss.{/i}"
     m "{i}I anxiously run towards the door as if a strange hand were to suddenly catch me from behind.{/i}"
-    m "{i}It’s been a quiet Monday. Suspiciously, too quiet if you ask me. {/i}"
+    m huh"{i}It’s been a quiet Monday. Suspiciously, too quiet if you ask me. {/i}"
     m "{i}Such a days make me uneasy. It may sound weird but… have you ever experienced that sensation? That sharp troubled feeling at the back of your mind when everything is going strangely well, and you are almost patiently waiting for something terrible to happen.{/i}"
     m "{i}Anyway, I grab my umbrella and jacket and proceed to go. This detective has a date!{/i}"
     m "{i}I look outside disappointedly. Autumn has come abruptly and It’s been raining all day long. The nauseating smell of the overflowed sewers floods the waterlogged streets.{/i}"
     m "{i}Great! This is such a perfect night for an expensive romantic dinner at Dorsia’s. I cannot stop thinking about spending 500 bucks dining with my shoes reeking of shit.{/i}"
     m "{i}Did I mention I love this city?{/i}"
+    
     play sound "footsteps_normal.ogg"
     m "{i}I turn around as I hear the sound of footsteps approaching me.{/i}"
     pause 2
