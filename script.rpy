@@ -3,8 +3,8 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define m = Character("ddd", image="reilly")
-define md = Character("Detective Reilly")
+define m = Character("")
+define md = Character("Detective Reilly", image="reilly")
 define wr = Character("Inspector Wright")
 define agente = Character("Officer Jones")
 
@@ -32,9 +32,9 @@ label start:
     pause 2
 
     
-    m normal"{i}It's almost 8 pm and of course there’s not a soul in the office. I wonder why am still here. Oh, I remember now… I was caged by my darling boss.{/i}"
+    m "{i}It's almost 8 pm and of course there’s not a soul in the office. I wonder why am still here. Oh, I remember now… I was caged by my darling boss.{/i}"
     m "{i}I anxiously run towards the door as if a strange hand were to suddenly catch me from behind.{/i}"
-    m huh"{i}It’s been a quiet Monday. Suspiciously, too quiet if you ask me. {/i}"
+    m "{i}It’s been a quiet Monday. Suspiciously, too quiet if you ask me. {/i}"
     m "{i}Such a days make me uneasy. It may sound weird but… have you ever experienced that sensation? That sharp troubled feeling at the back of your mind when everything is going strangely well, and you are almost patiently waiting for something terrible to happen.{/i}"
     m "{i}Anyway, I grab my umbrella and jacket and proceed to go. This detective has a date!{/i}"
     m "{i}I look outside disappointedly. Autumn has come abruptly and It’s been raining all day long. The nauseating smell of the overflowed sewers floods the waterlogged streets.{/i}"
@@ -48,13 +48,13 @@ label start:
     with dissolve
     agente "Hey, Jeff! Going home already?"
     pause 1
-    m "{i}It’s Theo Jones, we worked together for two years, shortly after I joined the police corp. Not a bad guy.{/i}"
+    md normal" Yeah, I was about to leave. What’s up? Do you need anything?"
+    md"{i}It’s Theo Jones, we worked together for two years, shortly after I joined the police corp. Not a bad guy.{/i}"
     pause 1
-    m " Yeah, I was about to leave. What’s up? Do you need anything?"
-    m "{i}Please say no.{/i}"
+    md huh"{i}Please say no.{/i}"
     pause 1
     agente "Are you in a hurry? Could it be… that you have another date? It’s the third or the fourth of this month? "
-    md"Hey! If you’re trying to hurt me, try again!"
+    md normal"Hey! If you’re trying to hurt me, try again!"
     md"I’m an attractive young policeman, dude. Let me enjoy the pleasures of this mortal life. Are your perhaps jealous of my freedom, now that you became a respectful happily married man?"
     m"{i}I do deserve a little bit of enjoyment with the living after spending the whole day surrounded by corpses, you know?{/i}"
     pause 1
