@@ -3,7 +3,6 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define m = Character("")
 define md = Character("Detective Reilly", image="reilly")
 define wr = Character("Inspector Wright")
 define agente = Character("Officer Jones", image="jones")
@@ -32,17 +31,17 @@ label start:
     pause 2
 
     
-    m "{i}It's almost 8 pm and of course there’s not a soul in the office. I wonder why am still here. Oh, I remember now… I was caged by my darling boss.{/i}"
-    m "{i}I anxiously run towards the door as if a strange hand were to suddenly catch me from behind.{/i}"
-    m "{i}It’s been a quiet Monday. Suspiciously, too quiet if you ask me. {/i}"
-    m "{i}Such a days make me uneasy. It may sound weird but… have you ever experienced that sensation? That sharp troubled feeling at the back of your mind when everything is going strangely well, and you are almost patiently waiting for something terrible to happen.{/i}"
-    m "{i}Anyway, I grab my umbrella and jacket and proceed to go. This detective has a date!{/i}"
-    m "{i}I look outside disappointedly. Autumn has come abruptly and It’s been raining all day long. The nauseating smell of the overflowed sewers floods the waterlogged streets.{/i}"
-    m "{i}Great! This is such a perfect night for an expensive romantic dinner at Dorsia’s. I cannot stop thinking about spending 500 bucks dining with my shoes reeking of shit.{/i}"
-    m "{i}Did I mention I love this city?{/i}"
+    md"{i}It's almost 8 pm and of course there’s not a soul in the office. I wonder why am I still here. Oh, I remember now… I was caged by my darling boss.{/i}"
+    md"{i}I anxiously run towards the door as if a strange hand were to suddenly catch me from behind.{/i}"
+    md "{i}It’s been a quiet Monday. Suspiciously, too quiet if you ask me. {/i}"
+    md "{i}Such a days make me uneasy. It may sound weird but… have you ever experienced that sensation? That sharp troubled feeling at the back of your mind when everything is going strangely well, and you are almost patiently waiting for something terrible to happen.{/i}"
+    md "{i}Anyway, I grab my umbrella and jacket and proceed to go. This detective has a date!{/i}"
+    md "{i}I look outside disappointedly. Autumn has come abruptly and It’s been raining all day long. The nauseating smell of the overflowed sewers floods the waterlogged streets.{/i}"
+    md "{i}Great! This is such a perfect night for an expensive romantic dinner at Dorsia’s. I cannot stop thinking about spending 500 bucks dining with my shoes reeking of shit.{/i}"
+    md "{i}Did I mention I love this city?{/i}"
     
     play sound "footsteps_normal.ogg"
-    m "{i}I turn around as I hear the sound of footsteps approaching me.{/i}"
+    md "{i}I turn around as I hear the sound of footsteps approaching me.{/i}"
     pause 2
     show jones normal
     with dissolve
@@ -53,38 +52,38 @@ label start:
     pause 1
     md huh"{i}Please say no.{/i}"
     pause 1
-    agente serious "Are you in a hurry? Could it be… that you have another date? It’s the third or the fourth of this month? "
-    md normal"Hey! If you’re trying to hurt me, try again!"
+    agente happy "Are you in a hurry? Could it be… that you have another date? It’s the third or the fourth of this month? "
+    md huh"Hey! If you’re trying to hurt me, try again!"
     md"I’m an attractive young policeman, dude. Let me enjoy the pleasures of this mortal life. Are your perhaps jealous of my freedom, now that you became a respectful happily married man?"
-    m"{i}I do deserve a little bit of enjoyment with the living after spending the whole day surrounded by corpses, you know?{/i}"
+    md huh"{i}I do deserve a little bit of enjoyment with the living after spending the whole day surrounded by corpses, you know?{/i}"
     pause 1
     show jones happy
     with dissolve
     agente "Not at all. In fact I believe it would be better for you to settle down. Aren’t you tired? I already have enough stress at work to deal with this dating madness of you."
     show jones normal
     with dissolve
-    md"Dating madness..."
+    md huh"Dating madness..."
     md"But wait,Wasn’t Lisa also a cop? It doesn’t sound too stress free to me."
-    agente "Well, we aren’t talking about me aren’t we?"
-    md"He,he,he...Gotcha!"
-    agente"Ehm…"
+    agente mad "Well, we aren’t talking about me aren’t we?"
+    md happy"He,he,he...Gotcha!"
+    agente "Ehm…"
     show jones serious
     with dissolve
     agente"Well, about earlier..."
-    m"{i}Suddenly a shiver ran down my spine. I have a bad feeling about this.{/i}"
+    md serious"{i}Suddenly a shiver ran down my spine. I have a bad feeling about this.{/i}"
     pause 1
     agente "Subzero was looking for you a moment ago."
     with hpunch
-    m "Shh… Don’t call her that! She may hear us! Why didn’t you tell her I already left?"
-    m "{i}See? I knew I was doomed.{/i}"
-    show jones annoyed
+    md mad"Shh… Don’t call her that! She may hear us! Why didn’t you tell her I already left?"
+    md doomed"{i}See? I knew I was doomed.{/i}"
+    show jones mad
     with dissolve
     agente "I’m sorry I’m not that good of a psychic to know you have a date, man."
     show jones sorry
     with dissolve
     agente "I still can tell her you left."
     agente "But don’t worry, It’s been a very tranquil day. It’s probably nothing."
-    m "Wanna bet who’s gonna spend the night in the office instead of dining with Charlene?"
+    md huh"Wanna bet who’s gonna spend the night in the office instead of dining with Charlene?"
     show jones normal
     with dissolve
     agente "She’s a hard nut to crack, uh? Those icy eyes give me goosebumps."
@@ -132,21 +131,21 @@ label continuacion3:
     scene bg_comisaria
     with dissolve
     
-    m "¿Hola?¿Quería algo inspectora? "
-    m "Acabo de cruzarme al agente Jones cuando ya estaba {b}saliendo por la puerta para irme a casa{/b}¿sabe? Me ha dicho que me estaba buscando."
-    m "{i}Sigue poniendo los condenados sellos como una máquina, ignorando por completo mi presencia. Cada vez estoy más cabreado. {/i}"
-    m "¿Oiga?"
-    m "..."
-    m "{i}Maldita sea Victoria ¡Hazme caso!{/i}"
+    md happy"¿Hola?¿Quería algo inspectora? "
+    md "Acabo de cruzarme al agente Jones cuando ya estaba {b}saliendo por la puerta para irme a casa{/b}¿sabe? Me ha dicho que me estaba buscando."
+    md huh"{i}Sigue poniendo los condenados sellos como una máquina, ignorando por completo mi presencia. Cada vez estoy más cabreado. {/i}"
+    md annoyed"¿Oiga?"
+    md "..."
+    md mad"{i}Maldita sea Victoria ¡Hazme caso!{/i}"
     
-    show wright normal
+    show victoria normal
     with dissolve
 
     wr "Disculpe, Jefferson. Estaba intentando acabar de clasificar estos documentos."
     wr "Sí, le estaba buscando. Perdone por avisarle a estas horas, pero ha sido algo repentino ¿Se iba ya?"
-    m "{i}La inspectora parecía algo cansada. Probablemente llevase en la comisaría más de 14 horas.{/i}"
-    m "Eso es, ya salía por la puerta. Tengo algo de prisa."
-    show wright_happy
+    md "{i}La inspectora parecía algo cansada. Probablemente llevase en la comisaría más de 14 horas.{/i}"
+    md happy"Eso es, ya salía por la puerta. Tengo algo de prisa."
+    show wright happy
     with dissolve
 
     wr "¿Tiene usted algo que hacer esta noche?¿Algún compromiso?"
