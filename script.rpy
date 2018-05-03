@@ -6,7 +6,7 @@
 define m = Character("")
 define md = Character("Detective Reilly", image="reilly")
 define wr = Character("Inspector Wright")
-define agente = Character("Officer Jones")
+define agente = Character("Officer Jones", image="jones")
 
 
 
@@ -48,12 +48,12 @@ label start:
     with dissolve
     agente "Hey, Jeff! Going home already?"
     pause 1
-    md normal" Yeah, I was about to leave. What’s up? Do you need anything?"
     md"{i}It’s Theo Jones, we worked together for two years, shortly after I joined the police corp. Not a bad guy.{/i}"
+    md normal" Yeah, I was about to leave. What’s up? Do you need anything?"
     pause 1
     md huh"{i}Please say no.{/i}"
     pause 1
-    agente "Are you in a hurry? Could it be… that you have another date? It’s the third or the fourth of this month? "
+    agente serious "Are you in a hurry? Could it be… that you have another date? It’s the third or the fourth of this month? "
     md normal"Hey! If you’re trying to hurt me, try again!"
     md"I’m an attractive young policeman, dude. Let me enjoy the pleasures of this mortal life. Are your perhaps jealous of my freedom, now that you became a respectful happily married man?"
     m"{i}I do deserve a little bit of enjoyment with the living after spending the whole day surrounded by corpses, you know?{/i}"
@@ -64,8 +64,6 @@ label start:
     show jones normal
     with dissolve
     md"Dating madness..."
-    show jones annoyed
-    with dissolve
     md"But wait,Wasn’t Lisa also a cop? It doesn’t sound too stress free to me."
     agente "Well, we aren’t talking about me aren’t we?"
     md"He,he,he...Gotcha!"
