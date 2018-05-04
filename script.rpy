@@ -17,6 +17,13 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
+    show bg_intro:
+        xalign 1.0 yalign 0.0
+        pause 2
+        ease 15.0 xalign 0.0
+        
+    pause 20
+    
     scene bg_comisariaentr
     with dissolve
 
@@ -25,6 +32,7 @@ label start:
     # directory.
     # m "{i}{/i}" m "" wr""
     
+
     play music "comisary_theme.ogg" fadeout 1.0 fadein 8.0
  
     
