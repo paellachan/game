@@ -4,7 +4,7 @@ label capitulo1:
     play music "comisary_theme.ogg" fadeout 1.0 fadein 8.0
     pause 2
 
-    
+
     md"{i}It's almost 8 pm and of course there’s not a soul in the office. I wonder why am I still here. Oh, I remember now… I was caged by my darling boss.{/i}"
     md"{i}I anxiously run towards the door as if a strange hand were to suddenly catch me from behind.{/i}"
     md "{i}It’s been a quiet Monday. Suspiciously, too quiet if you ask me. {/i}"
@@ -13,7 +13,7 @@ label capitulo1:
     md "{i}I look outside disappointedly. Autumn has come abruptly and It’s been raining all day long. The nauseating smell of the overflowed sewers floods the waterlogged streets.{/i}"
     md "{i}Great! This is such a perfect night for an expensive romantic dinner at Dorsia’s. I cannot stop thinking about spending 500 bucks dining with my shoes reeking of shit.{/i}"
     md "{i}Did I mention I love this city?{/i}"
-    
+
     play sound "footsteps_normal.ogg"
     md "{i}I turn around as I hear the sound of footsteps approaching me.{/i}"
     pause 2
@@ -61,57 +61,38 @@ label capitulo1:
     show jones normal
     with dissolve
     agente "She’s a hard nut to crack, uh? Those icy eyes give me goosebumps."
-
-
-menu:
-    "Respuesta políticamente correcta.":
-        jump wright1
-
-    "Respuesta de gallito.":
-        jump wright2
-        
-label wright1:  
-    m "No es para tanto, no te voy a mentir, es una persona estricta, pero hace bien su trabajo. He aprendido mucho trabajando con ella."
-    jump continuacion1
-    
-label wright2:  
-    m "¡Y que lo digas! Sinceramente creo que debería relajarse un poco."
-    jump continuacion2
-    
-label continuacion1:  
-    agente "Siempre me ha dado esa impresión. Aunque sigue dándome un poco de miedo esa mirada suya."
-    agente "Bueno, te dejo. Ahora soy yo el que se va a casa. Ya me contarás mañana. ¡Suerte!"
+    show side reilly doomed
+    md "God knows I’ve tried!"
+    agente"Someone you cannot seduce with your charms, huh? Must be sooo hard on Mr.Wonderful."
+    md"What’s with you today?"
+    agente happy"Just kidding, It’s funny how you get so defensive so quick."
+    agente"Could it be..."
+    md"Don’t go that way buddy… "
+    agente"And there you go again!"
+    md"Anyway...Weren’t you going home?"
+    agente"hahahaha Okay, okay..."
+    agente"See you tomorrow, good luck with Victoria."
+    md"Yeah, see you tomorrow..."
     hide jones
     with dissolve
-    jump continuacion3
+    md"{i}That bastard… Remember what i said about the good guy thing? Forget about it.{/i}"
 
-    
-label continuacion2:  
-    agente "Shhhh... ¡Como te oiga lo llevas claro!"
-    m "Bah! Está demasiado metida en sus casos como para preocuparse por la opinión de su minion. {i}Espero...{/i}"
-    agente "Bueno, te dejo. Ahora soy yo el que se va a casa. Ya me contarás mañana. ¡Suerte!"
-    m "Vaya cara qué tienes... ¡Nos vemos mañana!"
-    hide jones
-    with dissolve
-    jump continuacion3
 
-label continuacion3:  
 
-    
     m "{i}Os lo estaba comentando hace un segundo ¿no? Me pregunto qué demonios quiere Wright a las ocho de la maldita tarde de un lunes tormentoso y oscuro.{/i}"
     m "{i}Camino a zancadas violentas hacia su escritorio donde la encuentro sellando unos papeles de forma mecánica.{/i}"
-    
+
     pause 1
     scene bg_comisaria
     with dissolve
-    
+
     md happy"¿Hola?¿Quería algo inspectora? "
     md "Acabo de cruzarme al agente Jones cuando ya estaba {b}saliendo por la puerta para irme a casa{/b}¿sabe? Me ha dicho que me estaba buscando."
     md huh"{i}Sigue poniendo los condenados sellos como una máquina, ignorando por completo mi presencia. Cada vez estoy más cabreado. {/i}"
     md annoyed"¿Oiga?"
     md "..."
     md mad"{i}Maldita sea Victoria ¡Hazme caso!{/i}"
-    
+
     show victoria normal
     with dissolve
 
@@ -124,15 +105,15 @@ label continuacion3:
 
     wr "¿Tiene usted algo que hacer esta noche?¿Algún compromiso?"
     m "{i}Ahora estaba seguro. Ya podía ir cancelando esa reserva. La inspectora Wright, también conocida como SubZero, haciendo referencia a su desarrollada calidez emocional, nunca hacía preguntas personales.{/i}"
-   
+
 menu:
     "Tengo una reserva en el Dorsia a las 8.":
         jump dorsia
 
     "No es asunto suyo.":
         jump borde
-        
-label dorsia:  
+
+label dorsia:
     m "¿Sabe dónde es, no? Ese sitio tan caro donde los camareros llevan esas pajaritas horteras de los 80. Hace un par de meses que estoy viendo a una chica, ya sabe a lo que me refiero ¿no?"
     show wright_mad
     with dissolve
@@ -145,25 +126,25 @@ label dorsia:
     m "¡¿Quéeee?! Oiga no puede..."
     wr "Vayamos a mi despacho, voy a enseñarle algo."
     m "¡Eh!¡Inspectora! Esto no es justo!"
-    
+
     jump continuar
 
-label borde:  
+label borde:
     show wright_wtf
     wr "No era mi intención incomodarle detective."
-    m "{i}Aunque tenía la misma cara inexpresiva de siempre noté un tono de tristeza en su voz.{/i}"    
+    m "{i}Aunque tenía la misma cara inexpresiva de siempre noté un tono de tristeza en su voz.{/i}"
     m "Bueno¿Qué necesita? Tengo algo de prisa."
     show victoria normal
     wr "Vayamos a mi despacho, voy a enseñarle algo."
     m "¿Ahora?"
-    
+
     jump continuar
-   
-label continuar:  
+
+label continuar:
     show victoria normal
     m "¿Es una broma? Mira Victoria, llevo aquí desde las 8 de la mañana. "
     pause 2
-    stop music fadeout 5.0 
+    stop music fadeout 5.0
     play music "tension.ogg" fadeout 1.0 fadein 5.0
     m "{i}El despacho está algo vacío, aunque muy ordenado. La verdad, conociendo a Victoria me sorprendería que fuese de otra manera. Hay un olor familiar y agradable ¿Un ambientador quizá? {/i}"
     wr "Preste atención Jefferson. ¿Ha visto hoy las noticias?"
@@ -186,5 +167,5 @@ label continuar:
     m "¿Y lo son?"
     wr "Me temo que tenemos un caso."
 
-    
+
     return
