@@ -19,21 +19,19 @@ label capitulo1:
     pause 2
     show jones normal
     with dissolve
-    agente "Hey, Jeff! Going home already?"
+    agente "Hey, Jeff!{w=0.5} Going home already?"
     pause 1
     md"{i}It’s Theo Jones, we worked together for two years, shortly after I joined the police corp. Not a bad guy.{/i}"
-    md normal" Yeah, I was about to leave. What’s up? Do you need anything?"
+    md normal" Yeah, I was about to leave. What’s up? Do you need anything?{w=0.5}{i}Please say no.{/i}"
     pause 1
-    md huh"{i}Please say no.{/i}"
-    pause 1
-    agente happy "Are you in a hurry? Could it be… that you have another date? It’s the third or the fourth of this month? "
+    agente happy "Are you in a hurry? Could it be… {w=0.5} that you have another date? It’s the third or the fourth of this month? "
     md huh"Hey! If you’re trying to hurt me, try again!"
     md"I’m an attractive young policeman, dude. Let me enjoy the pleasures of this mortal life. Are your perhaps jealous of my freedom, now that you became a respectful happily married man?"
     md huh"{i}I do deserve a little bit of enjoyment with the living after spending the whole day surrounded by corpses, you know?{/i}"
     pause 1
     show jones happy
     with dissolve
-    agente "Not at all. In fact I believe it would be better for you to settle down. Aren’t you tired? I already have enough stress at work to deal with this dating madness of you."
+    agente "Not at all. In fact I believe it would be better for you to settle down.{w=0.5} Aren’t you tired? I already have enough stress at work to deal with this dating madness of you."
     show jones normal
     with dissolve
     md huh"Dating madness..."
@@ -44,7 +42,7 @@ label capitulo1:
     show jones serious
     with dissolve
     agente"Well, about earlier..."
-    md serious"{i}Suddenly a shiver ran down my spine. I have a bad feeling about this.{/i}"
+    md serious"{i}Suddenly a shiver ran down my spine.{w=0.5} I have a bad feeling about this.{/i}"
     pause 1
     agente "Subzero was looking for you a moment ago."
     with hpunch
