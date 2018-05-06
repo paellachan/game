@@ -55,13 +55,13 @@ define gui.interface_text_color = '#ffffff'
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.text_font = "GeosansLight.ttf"
+define gui.text_font = "text.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = "RobotoCondensed-Bold.ttf"
+define gui.name_text_font = "names.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "GeosansLight.ttf"
+define gui.interface_text_font = "names.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 26
@@ -243,7 +243,7 @@ define gui.file_slot_rows = 2
 
 ## The position of the left side of the navigation buttons, relative to the left
 ## side of the screen.
-define gui.navigation_xpos = 60
+define gui.navigation_xpos = 120
 
 ## The vertical position of the skip indicator.
 define gui.skip_ypos = 15
@@ -252,7 +252,7 @@ define gui.skip_ypos = 15
 define gui.notify_ypos = 68
 
 ## The spacing between menu choices.
-define gui.choice_spacing = 33
+define gui.choice_spacing = 120
 
 ## Buttons in the navigation section of the main and game menus.
 define gui.navigation_spacing = 6
@@ -466,6 +466,3 @@ init python:
 
         gui.nvl_button_width = 1860
         gui.nvl_button_xpos = 30
-
-
-

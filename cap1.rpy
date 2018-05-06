@@ -5,8 +5,8 @@ label capitulo1:
     pause 2
 
 
-    md"{i}It's almost 8 pm and of course there’s not a soul in the office. I wonder why am I still here. Oh, I remember now… I was caged by my darling boss.{/i}"
-    md"{i}I anxiously run towards the door as if a strange hand were to suddenly catch me from behind.{/i}"
+    md "{i}It's almost 8 pm and of course there’s not a soul in the office. I wonder why am I still here. Oh, I remember now… I was caged by my darling boss.{/i}"
+    md "{i}I anxiously run towards the door as if a strange hand were to suddenly catch me from behind.{/i}"
     md "{i}It’s been a quiet Monday. Suspiciously, too quiet if you ask me. {/i}"
     md "{i}Such a days make me uneasy. It may sound weird but… have you ever experienced that sensation? That sharp troubled feeling at the back of your mind when everything is going strangely well, and you are almost patiently waiting for something terrible to happen.{/i}"
     md "{i}Anyway, I grab my umbrella and jacket and proceed to go. This detective has a date!{/i}"
@@ -19,30 +19,36 @@ label capitulo1:
     pause 2
     show jones normal
     with dissolve
-    agente "Hey, Jeff!{w=0.5} Going home already?"
+    agente "Hey, Jeff! Going home already?"
     pause 1
-    md"{i}It’s Theo Jones, we worked together for two years, shortly after I joined the police corp. Not a bad guy.{/i}"
-    md normal" Yeah, I was about to leave. What’s up? Do you need anything?{w=0.5}{i}Please say no.{/i}"
+    md "{i}It’s Theo Jones, we worked together for two years, shortly after I joined the police corp. Not a bad guy.{/i}"
+    md normal" Yeah, I was about to leave. What’s up? Do you need anything?{p=1}{i}Please say no.{/i}"
     pause 1
-    agente happy "Are you in a hurry? Could it be… {w=0.5} that you have another date? It’s the third or the fourth of this month? "
+    agente surprise"Oh, Are you in a hurry?"
+    agente "Don't tell me… "
+    with hpunch
+    agente evil "That you have another date?"
+    agente surprise"It’s the third or the fourth of this month? "
     md huh"Hey! If you’re trying to hurt me, try again!"
+    show jones normal
+    with dissolve
     md"I’m an attractive young policeman, dude. Let me enjoy the pleasures of this mortal life. Are your perhaps jealous of my freedom, now that you became a respectful happily married man?"
     md huh"{i}I do deserve a little bit of enjoyment with the living after spending the whole day surrounded by corpses, you know?{/i}"
     pause 1
-    show jones happy
+    show jones smile
     with dissolve
-    agente "Not at all. In fact I believe it would be better for you to settle down.{w=0.5} Aren’t you tired? I already have enough stress at work to deal with this dating madness of you."
+    agente "Not at all. In fact I believe it would be better for you to settle down.{w=0.7} Aren’t you tired? I already have enough stress at work to deal with this dating madness of you."
     show jones normal
     with dissolve
     md huh"Dating madness..."
-    md"But wait,Wasn’t Lisa also a cop? It doesn’t sound too stress free to me."
-    agente mad "Well, we aren’t talking about me aren’t we?"
+    md "But wait,Wasn’t Lisa also a cop? {w=0.7}It doesn’t sound too stress free to me."
+    agente doubt "Well, we aren’t talking about me aren’t we?"
     md happy"He,he,he...Gotcha!"
-    agente "Ehm…"
+    agente mad"Ehm…"
     show jones serious
     with dissolve
     agente"Well, about earlier..."
-    md serious"{i}Suddenly a shiver ran down my spine.{w=0.5} I have a bad feeling about this.{/i}"
+    md surprised "{i}Suddenly a shiver ran down my spine.{w=1} I have a bad feeling about this.{/i}"
     pause 1
     agente "Subzero was looking for you a moment ago."
     with hpunch
@@ -54,22 +60,21 @@ label capitulo1:
     show jones sorry
     with dissolve
     agente "I still can tell her you left."
-    agente "But don’t worry, It’s been a very tranquil day. It’s probably nothing."
+    agente pleasant"But don’t worry, It’s been a very peaceful day. It’s probably nothing."
     md huh"Wanna bet who’s gonna spend the night in the office instead of dining with Charlene?"
     show jones normal
     with dissolve
     agente "She’s a hard nut to crack, uh? Those icy eyes give me goosebumps."
-    show side reilly doomed
-    md "God knows I’ve tried!"
-    agente"Someone you cannot seduce with your charms, huh? Must be sooo hard on Mr.Wonderful."
+    md doomed"God knows I’ve tried!"
+    agente evil"Someone you cannot seduce with your charms, huh? Must be sooo hard on Mr.Wonderful."
     md"What’s with you today?"
-    agente happy"Just kidding, It’s funny how you get so defensive so quick."
-    agente"Could it be..."
+    agente pleasant"Just kidding, It’s funny how you get so defensive so quick."
+    agente evil"Could it be..."
     md"Don’t go that way buddy… "
-    agente"And there you go again!"
+    agente smile"And there you go again!"
     md"Anyway...Weren’t you going home?"
-    agente"hahahaha Okay, okay..."
-    agente"See you tomorrow, good luck with Victoria."
+    agente pleasant"hahahaha Okay, okay..."
+    agente normal"See you tomorrow, good luck with Victoria."
     md"Yeah, see you tomorrow..."
     hide jones
     with dissolve
@@ -102,7 +107,7 @@ label capitulo1:
     with dissolve
 
     wr "¿Tiene usted algo que hacer esta noche?¿Algún compromiso?"
-    m "{i}Ahora estaba seguro. Ya podía ir cancelando esa reserva. La inspectora Wright, también conocida como SubZero, haciendo referencia a su desarrollada calidez emocional, nunca hacía preguntas personales.{/i}"
+    md "{i}Ahora estaba seguro. Ya podía ir cancelando esa reserva. La inspectora Wright, también conocida como SubZero, haciendo referencia a su desarrollada calidez emocional, nunca hacía preguntas personales.{/i}"
 
 menu:
     "Tengo una reserva en el Dorsia a las 8.":
