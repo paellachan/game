@@ -293,45 +293,58 @@ style quick_button_text:
 
 screen navigation():
 
-    vbox:
-        style_prefix "navigation"
+    hbox:
 
-        xpos gui.navigation_xpos
-        yalign 0.5
-
-        spacing gui.navigation_spacing
-
-        if main_menu:
-
-            textbutton _("Start") action Start()
-
-        else:
-
-            textbutton _("History") action ShowMenu("history")
-
-            textbutton _("Save") action ShowMenu("save")
+        xalign 0.9
+        yalign 0.9
 
         textbutton _("Load") action ShowMenu("load")
-
+        textbutton _("New Game") action Start()
         textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Quit") action Quit(confirm=not main_menu)
 
-        if _in_replay:
-
-            textbutton _("End Replay") action EndReplay(confirm=True)
-
-        elif not main_menu:
-
-            textbutton _("Main Menu") action MainMenu()
-
-        textbutton _("About") action ShowMenu("about")
-
-        if renpy.variant("pc"):
-
-            ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
-
-            ## The quit button is banned on iOS and unnecessary on Android.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+    # vbox:
+    #     style_prefix "navigation"
+    #
+    #     xpos gui.navigation_xpos
+    #     yalign 0.5
+    #
+    #     spacing gui.navigation_spacing
+    #
+    #
+    #
+    #     if main_menu:
+    #
+    #
+    #         textbutton _("Start") action Start()
+    #
+    #     else:
+    #
+    #         textbutton _("History") action ShowMenu("history")
+    #
+    #         textbutton _("Save") action ShowMenu("save")
+    #
+    #     textbutton _("Load") action ShowMenu("load")
+    #
+    #     textbutton _("Preferences") action ShowMenu("preferences")
+    #
+    #     if _in_replay:
+    #
+    #         textbutton _("End Replay") action EndReplay(confirm=True)
+    #
+    #     elif not main_menu:
+    #
+    #         textbutton _("Main Menu") action MainMenu()
+    #
+    #     textbutton _("About") action ShowMenu("about")
+    #
+    #     if renpy.variant("pc"):
+    #
+    #         ## Help isn't necessary or relevant to mobile devices.
+    #         textbutton _("Help") action ShowMenu("help")
+    #
+    #         ## The quit button is banned on iOS and unnecessary on Android.
+    #         textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -361,22 +374,22 @@ screen main_menu():
     add gui.main_menu_background
 
     ## This empty frame darkens the main menu.
-    frame:
-        pass
+    # frame:
+    #     pass
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
 
-    if gui.show_name:
-
-        vbox:
-            text "[config.name!t]":
-                style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
-
+    # if gui.show_name:
+    #
+    #     vbox:
+    #         text "[config.name!t]":
+    #             style "main_menu_title"
+    #
+    #         text "[config.version]":
+    #             style "main_menu_version"
+    #
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
@@ -420,62 +433,59 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     style_prefix "game_menu"
 
-    if main_menu:
-        add gui.main_menu_background
-    else:
-        add gui.game_menu_background
+    add gui.game_menu_background
 
-    frame:
-        style "game_menu_outer_frame"
-
-        hbox:
-
-            ## Reserve space for the navigation section.
-            frame:
-                style "game_menu_navigation_frame"
-
-            frame:
-                style "game_menu_content_frame"
-
-                if scroll == "viewport":
-
-                    viewport:
-                        yinitial yinitial
-                        scrollbars "vertical"
-                        mousewheel True
-                        draggable True
-
-                        side_yfill True
-
-                        vbox:
-                            transclude
-
-                elif scroll == "vpgrid":
-
-                    vpgrid:
-                        cols 1
-                        yinitial yinitial
-
-                        scrollbars "vertical"
-                        mousewheel True
-                        draggable True
-
-                        side_yfill True
-
-                        transclude
-
-                else:
-
-                    transclude
-
-    use navigation
-
-    textbutton _("Return"):
-        style "return_button"
-
-        action Return()
-
-    label title
+    # frame:
+    #     style "game_menu_outer_frame"
+    #
+    #     hbox:
+    #
+    #         ## Reserve space for the navigation section.
+    #         frame:
+    #             style "game_menu_navigation_frame"
+    #
+    #         frame:
+    #             style "game_menu_content_frame"
+    #
+    #             if scroll == "viewport":
+    #
+    #                 viewport:
+    #                     yinitial yinitial
+    #                     scrollbars "vertical"
+    #                     mousewheel True
+    #                     draggable True
+    #
+    #                     side_yfill True
+    #
+    #                     vbox:
+    #                         transclude
+    #
+    #             elif scroll == "vpgrid":
+    #
+    #                 vpgrid:
+    #                     cols 1
+    #                     yinitial yinitial
+    #
+    #                     scrollbars "vertical"
+    #                     mousewheel True
+    #                     draggable True
+    #
+    #                     side_yfill True
+    #
+    #                     transclude
+    #
+    #             else:
+    #
+    #                 transclude
+    #
+    # use navigation
+    #
+    # textbutton _("Return"):
+    #     style "return_button"
+    #
+    #     action Return()
+    #
+    # label title
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
@@ -589,6 +599,15 @@ screen save():
     tag menu
 
     use file_slots(_("Save"))
+    add "gui/savegame.png" xalign 0.3 yalign 0.15
+    grid 2 2:
+        xalign 0.8
+        yalign 0.15
+        spacing 5
+        textbutton "back" action Return() xalign 1.0
+        textbutton "load" action ShowMenu('load')
+        textbutton "options" action ShowMenu('preferences')
+        textbutton "title" action ShowMenu('main_menu')
 
 
 screen load():
@@ -596,6 +615,15 @@ screen load():
     tag menu
 
     use file_slots(_("Load"))
+    add "gui/loadgame.png" xalign 0.3 yalign 0.15
+    grid 2 2:
+        xalign 0.8
+        yalign 0.15
+        spacing 5
+        textbutton "back" action Return() xalign 1.0
+        textbutton "save" action ShowMenu('save')
+        textbutton "options" action ShowMenu('preferences')
+        textbutton "title" action ShowMenu('main_menu')
 
 
 screen file_slots(title):
