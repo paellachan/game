@@ -293,45 +293,58 @@ style quick_button_text:
 
 screen navigation():
 
-    vbox:
-        style_prefix "navigation"
+    hbox:
 
-        xpos gui.navigation_xpos
-        yalign 0.5
-
-        spacing gui.navigation_spacing
-
-        if main_menu:
-
-            textbutton _("Start") action Start()
-
-        else:
-
-            textbutton _("History") action ShowMenu("history")
-
-            textbutton _("Save") action ShowMenu("save")
+        xalign 0.9
+        yalign 0.9
 
         textbutton _("Load") action ShowMenu("load")
-
+        textbutton _("New Game") action Start()
         textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Quit") action Quit(confirm=not main_menu)
 
-        if _in_replay:
-
-            textbutton _("End Replay") action EndReplay(confirm=True)
-
-        elif not main_menu:
-
-            textbutton _("Main Menu") action MainMenu()
-
-        textbutton _("About") action ShowMenu("about")
-
-        if renpy.variant("pc"):
-
-            ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
-
-            ## The quit button is banned on iOS and unnecessary on Android.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+    # vbox:
+    #     style_prefix "navigation"
+    #
+    #     xpos gui.navigation_xpos
+    #     yalign 0.5
+    #
+    #     spacing gui.navigation_spacing
+    #
+    #
+    #
+    #     if main_menu:
+    #
+    #
+    #         textbutton _("Start") action Start()
+    #
+    #     else:
+    #
+    #         textbutton _("History") action ShowMenu("history")
+    #
+    #         textbutton _("Save") action ShowMenu("save")
+    #
+    #     textbutton _("Load") action ShowMenu("load")
+    #
+    #     textbutton _("Preferences") action ShowMenu("preferences")
+    #
+    #     if _in_replay:
+    #
+    #         textbutton _("End Replay") action EndReplay(confirm=True)
+    #
+    #     elif not main_menu:
+    #
+    #         textbutton _("Main Menu") action MainMenu()
+    #
+    #     textbutton _("About") action ShowMenu("about")
+    #
+    #     if renpy.variant("pc"):
+    #
+    #         ## Help isn't necessary or relevant to mobile devices.
+    #         textbutton _("Help") action ShowMenu("help")
+    #
+    #         ## The quit button is banned on iOS and unnecessary on Android.
+    #         textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -361,22 +374,22 @@ screen main_menu():
     add gui.main_menu_background
 
     ## This empty frame darkens the main menu.
-    frame:
-        pass
+    # frame:
+    #     pass
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
 
-    if gui.show_name:
-
-        vbox:
-            text "[config.name!t]":
-                style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
-
+    # if gui.show_name:
+    #
+    #     vbox:
+    #         text "[config.name!t]":
+    #             style "main_menu_title"
+    #
+    #         text "[config.version]":
+    #             style "main_menu_version"
+    #
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
@@ -420,62 +433,59 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     style_prefix "game_menu"
 
-    if main_menu:
-        add gui.main_menu_background
-    else:
-        add gui.game_menu_background
+    add gui.game_menu_background
 
-    frame:
-        style "game_menu_outer_frame"
-
-        hbox:
-
-            ## Reserve space for the navigation section.
-            frame:
-                style "game_menu_navigation_frame"
-
-            frame:
-                style "game_menu_content_frame"
-
-                if scroll == "viewport":
-
-                    viewport:
-                        yinitial yinitial
-                        scrollbars "vertical"
-                        mousewheel True
-                        draggable True
-
-                        side_yfill True
-
-                        vbox:
-                            transclude
-
-                elif scroll == "vpgrid":
-
-                    vpgrid:
-                        cols 1
-                        yinitial yinitial
-
-                        scrollbars "vertical"
-                        mousewheel True
-                        draggable True
-
-                        side_yfill True
-
-                        transclude
-
-                else:
-
-                    transclude
-
-    use navigation
-
-    textbutton _("Return"):
-        style "return_button"
-
-        action Return()
-
-    label title
+    # frame:
+    #     style "game_menu_outer_frame"
+    #
+    #     hbox:
+    #
+    #         ## Reserve space for the navigation section.
+    #         frame:
+    #             style "game_menu_navigation_frame"
+    #
+    #         frame:
+    #             style "game_menu_content_frame"
+    #
+    #             if scroll == "viewport":
+    #
+    #                 viewport:
+    #                     yinitial yinitial
+    #                     scrollbars "vertical"
+    #                     mousewheel True
+    #                     draggable True
+    #
+    #                     side_yfill True
+    #
+    #                     vbox:
+    #                         transclude
+    #
+    #             elif scroll == "vpgrid":
+    #
+    #                 vpgrid:
+    #                     cols 1
+    #                     yinitial yinitial
+    #
+    #                     scrollbars "vertical"
+    #                     mousewheel True
+    #                     draggable True
+    #
+    #                     side_yfill True
+    #
+    #                     transclude
+    #
+    #             else:
+    #
+    #                 transclude
+    #
+    # use navigation
+    #
+    # textbutton _("Return"):
+    #     style "return_button"
+    #
+    #     action Return()
+    #
+    # label title
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
@@ -589,6 +599,15 @@ screen save():
     tag menu
 
     use file_slots(_("Save"))
+    add "gui/savegame.png" xalign 0.3 yalign 0.15
+    grid 2 2:
+        xalign 0.8
+        yalign 0.15
+        spacing 5
+        textbutton "back" action Return() xalign 1.0
+        textbutton "load" action ShowMenu('load')
+        textbutton "options" action ShowMenu('preferences')
+        textbutton "title" action ShowMenu('main_menu')
 
 
 screen load():
@@ -596,84 +615,123 @@ screen load():
     tag menu
 
     use file_slots(_("Load"))
+    add "gui/loadgame.png" xalign 0.3 yalign 0.15
+    grid 2 2:
+        xalign 0.8
+        yalign 0.15
+        spacing 5
+        textbutton "back" action Return() xalign 1.0
+        textbutton "save" action ShowMenu('save')
+        textbutton "options" action ShowMenu('preferences')
+        textbutton "title" action ShowMenu('main_menu')
 
 
 screen file_slots(title):
 
     default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
 
-    use game_menu(title):
+    use game_menu(title)
 
-        fixed:
+    grid gui.file_slot_cols gui.file_slot_rows:
+        xsize 800
+        xalign 0.5
+        yalign 0.5
 
-            ## This ensures the input will get the enter event before any of the
-            ## buttons do.
-            order_reverse True
+        spacing 10
+        for i in range(gui.file_slot_cols * gui.file_slot_rows):
+            $ slot = i + 1
 
-            ## The page name, which can be edited by clicking on a button.
             button:
-                style "page_label"
+                xsize 190
+                ysize 175
+                action FileAction(slot)
+                add "gui/slot.png"
+                vbox:
+                    add FileScreenshot(slot) xalign 0.5 size(190,125)
+                    text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+                            xalign 0.5
+                add "gui/slotborder.png"
+                key "save_delete" action FileDelete(slot)
 
-                key_events True
-                xalign 0.5
-                action page_name_value.Toggle()
+    #numbers
+    hbox:
+        xalign 0.5
+        yalign 0.8
+        spacing 20
 
-                input:
-                    style "page_label_text"
-                    value page_name_value
+        for i in range(1,6):
+            textbutton "[i]" text_size 40 action FilePage(i)
 
-            ## The grid of file slots.
-            grid gui.file_slot_cols gui.file_slot_rows:
-                style_prefix "slot"
-
-                xalign 0.5
-                yalign 0.5
-
-                spacing gui.slot_spacing
-
-                for i in range(gui.file_slot_cols * gui.file_slot_rows):
-
-                    $ slot = i + 1
-
-                    button:
-                        action FileAction(slot)
-
-                        has vbox
-
-                        add FileScreenshot(slot) xalign 0.5
-
-                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
-                            style "slot_time_text"
-
-                        text FileSaveName(slot):
-                            style "slot_name_text"
-
-                        key "save_delete" action FileDelete(slot)
-
-            ## Buttons to access other pages.
-            hbox:
-                style_prefix "page"
-
-                xalign 0.5
-                yalign 1.0
-
-                spacing gui.page_spacing
-
-                textbutton _("<") action FilePagePrevious()
-
-                if config.has_autosave:
-                    textbutton _("{#auto_page}A") action FilePage("auto")
-
-                if config.has_quicksave:
-                    textbutton _("{#quick_page}Q") action FilePage("quick")
-
-                ## range(1, 10) gives the numbers from 1 to 9.
-                for page in range(1, 10):
-                    textbutton "[page]" action FilePage(page)
-
-                textbutton _(">") action FilePageNext()
-
-
+#         fixed:
+#
+#             ## This ensures the input will get the enter event before any of the
+#             ## buttons do.
+#             order_reverse True
+#
+#             ## The page name, which can be edited by clicking on a button.
+#             button:
+#                 style "page_label"
+#
+#                 key_events True
+#                 xalign 0.5
+#                 action page_name_value.Toggle()
+#
+#                 input:
+#                     style "page_label_text"
+#                     value page_name_value
+#
+#             ## The grid of file slots.
+#             grid gui.file_slot_cols gui.file_slot_rows:
+#                 style_prefix "slot"
+#
+#                 xalign 0.5
+#                 yalign 0.5
+#
+#                 spacing gui.slot_spacing
+#
+#                 for i in range(gui.file_slot_cols * gui.file_slot_rows):
+#
+#                     $ slot = i + 1
+#
+#                     button:
+#                         action FileAction(slot)
+#
+#                         has vbox
+#
+#                         add FileScreenshot(slot) xalign 0.5
+#
+#                         text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+#                             style "slot_time_text"
+#
+#                         text FileSaveName(slot):
+#                             style "slot_name_text"
+#
+#                         key "save_delete" action FileDelete(slot)
+#
+#             ## Buttons to access other pages.
+#             hbox:
+#                 style_prefix "page"
+#
+#                 xalign 0.5
+#                 yalign 1.0
+#
+#                 spacing gui.page_spacing
+#
+#                 textbutton _("<") action FilePagePrevious()
+#
+#                 if config.has_autosave:
+#                     textbutton _("{#auto_page}A") action FilePage("auto")
+#
+#                 if config.has_quicksave:
+#                     textbutton _("{#quick_page}Q") action FilePage("quick")
+#
+#                 ## range(1, 10) gives the numbers from 1 to 9.
+#                 for page in range(1, 10):
+#                     textbutton "[page]" action FilePage(page)
+#
+#                 textbutton _(">") action FilePageNext()
+#
+#
 style page_label is gui_label
 style page_label_text is gui_label_text
 style page_button is gui_button
