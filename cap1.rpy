@@ -1,4 +1,6 @@
 label capitulo1:
+    scene black with Dissolve(4.0)
+    $ quick_menu = True
     scene bg_comisariaentr
     with dissolve
     play music "comisary_theme.ogg" fadeout 1.0 fadein 8.0

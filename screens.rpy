@@ -239,14 +239,10 @@ style choice_button_text is default:
 ##
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
 ## menus.
-
 screen quick_menu():
-
     ## Ensure this appears on top of other screens.
     zorder 100
-
     if quick_menu:
-
         hbox:
             style_prefix "quick"
 
