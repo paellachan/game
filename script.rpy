@@ -9,13 +9,13 @@ label start:
     play music "tension.ogg" fadeout 1.0 fadein 8.0
     # Intro
     scene black with Dissolve(4.0, hard=True)
-    $ renpy.pause(4, hard=True)
+    $ renpy.pause(3, hard=True)
 
     show bg_intro with Dissolve(7.0):
         xalign 1.0 yalign 0.0
-        pause 2
-        ease 28.0 xalign 0.0
-    $ renpy.pause(30, hard=True)
+        pause 5
+        ease 27.0 xalign 0.0
+    $ renpy.pause(27, hard=True)
     stop music
     scene black with Dissolve(2.0, hard=True)
     $ renpy.pause(3, hard=True)
