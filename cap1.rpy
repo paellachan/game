@@ -77,64 +77,58 @@ label capitulo1:
     md"Anyway...Weren’t you going home?"
     agente pleasant"hahahaha Okay, okay..."
     agente normal"See you tomorrow, good luck with Victoria."
-    md"Yeah, see you tomorrow..."
+    md doubt"Yeah, see you tomorrow..."
     hide jones
     with dissolve
+    hide md
+    with dissolve
     md"{i}That bastard… Remember what i said about the good guy thing? Forget about it.{/i}"
-
-
-
-    m "{i}Os lo estaba comentando hace un segundo ¿no? Me pregunto qué demonios quiere Wright a las ocho de la maldita tarde de un lunes tormentoso y oscuro.{/i}"
-    m "{i}Camino a zancadas violentas hacia su escritorio donde la encuentro sellando unos papeles de forma mecánica.{/i}"
+    md"{i} Well, going back to what I was saying earlier… I knew it, right? I wonder what the hell does Wright want at eight o'clock on a dark, stormy Monday night.{/i}"
 
     pause 1
     scene bg_comisaria
     with dissolve
 
-    md happy"¿Hola?¿Quería algo inspectora? "
-    md "Acabo de cruzarme al agente Jones cuando ya estaba {b}saliendo por la puerta para irme a casa{/b}¿sabe? Me ha dicho que me estaba buscando."
-    md huh"{i}Sigue poniendo los condenados sellos como una máquina, ignorando por completo mi presencia. Cada vez estoy más cabreado. {/i}"
-    md annoyed"¿Oiga?"
+    md "{i} I stride aggressively towards her desk, where I find her robotically stamping papers.{/i}"
+    md " Ehmmm…{w=0.5} Hello? Did you ask for me?"
+    md "I ran into Agent Jones when {b} I was about going home {/b} , you know? He told me you needed something."
+    md huh"{i}She just keeps on stamping the documents, ignoring my presence completely. {/i}"
+    md annoyed"Excuse me?"
     md "..."
-    md mad"{i}Maldita sea Victoria ¡Hazme caso!{/i}"
+    md mad"{i}Dammit Victoria! Pay attention to me!{/i}"
 
     show victoria normal
     with dissolve
 
-    wr "Disculpe, Jefferson. Estaba intentando acabar de clasificar estos documentos."
-    wr "Sí, le estaba buscando. Perdone por avisarle a estas horas, pero ha sido algo repentino ¿Se iba ya?"
-    md "{i}La inspectora parecía algo cansada. Probablemente llevase en la comisaría más de 14 horas.{/i}"
-    md happy"Eso es, ya salía por la puerta. Tengo algo de prisa."
+    wr "Ah! You are here already."
+    md "{i}She notices now?{/i}"
+    wr " Excuse me, Jefferson. I was trying to finish sorting these documents."
+    wr "Yes, I was looking for you. I’m sorry to call you out at this hour, but something suddenly came. Were you leaving already?"
+    md "{i}Inspector looked somehow worn out. She has been probably working more than 14 hours.{/i}"
+    md happy"Yeah, I was about to leave. I have something...to do."
+    md happy"{i}Of course I won’t confess my plans to her.{/i}"
     show wright happy
     with dissolve
-
-    wr "¿Tiene usted algo que hacer esta noche?¿Algún compromiso?"
-    md "{i}Ahora estaba seguro. Ya podía ir cancelando esa reserva. La inspectora Wright, también conocida como SubZero, haciendo referencia a su desarrollada calidez emocional, nunca hacía preguntas personales.{/i}"
-
+    wr "Oh… So you have plans for tonight."
+    md "{i}Now she seems disappointed… Well, I’m sorry for not living here and having a life, you know?{/i}"
+    wr "Are those plans really urgent, right?"
+    md "{i}Now I was sure. I can cancel the date thing already. Wright, who never seems interested in asking personal questions was standing before me, almost begging me to stay.{/i}"
+    md "{i}She was being so exceptionally inquisitve I almost grew interested about what was going on.{/i}"
+    wr "Well then, see you tomorrow, I guess?"
+    md "{i}Her smile made my blood run cold.{/i}"
+    md"Aren’t you going home, boss?"
+    wr "I still have some things to finish tonight."
+    md "{i}I kind of feel bad about this...{/i}"
+    wr "Don’t make such a face! We can talk about this tomorrow."
 menu:
-    "Tengo una reserva en el Dorsia a las 8.":
-        jump dorsia
+    "Leave.":
+        jump leave
 
-    "No es asunto suyo.":
-        jump borde
+    "Stay.":
+        jump stay
 
-label dorsia:
-    m "¿Sabe dónde es, no? Ese sitio tan caro donde los camareros llevan esas pajaritas horteras de los 80. Hace un par de meses que estoy viendo a una chica, ya sabe a lo que me refiero ¿no?"
-    show wright_mad
-    with dissolve
-    wr "Vaya, eso es maravilloso detective. Celebro que comparta conmigo estas confesiones tan íntimas. Después de todo llevamos ya seis años trabajando juntos."
-    m "{i}Ese tono sarcástico me heló la sangre. A ella no le interesaba otra respuesta que no fuese mi disponibilidad total para quedarme a hacer horas extras no pagadas hasta dios sabe cuando.{/i}"
-    m "Bueno¿Qué necesita? Tengo algo de prisa."
-    show victoria normal
-    wr "Esa reserva en el Dorsia…"
-    wr "Cancélela."
-    m "¡¿Quéeee?! Oiga no puede..."
-    wr "Vayamos a mi despacho, voy a enseñarle algo."
-    m "¡Eh!¡Inspectora! Esto no es justo!"
 
-    jump continuar
-
-label borde:
+label leave:
     show wright_wtf
     wr "No era mi intención incomodarle detective."
     m "{i}Aunque tenía la misma cara inexpresiva de siempre noté un tono de tristeza en su voz.{/i}"
