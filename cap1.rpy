@@ -80,45 +80,64 @@ label capitulo1:
     md doubt"Yeah, see you tomorrow..."
     hide jones
     with dissolve
-    hide md
-    with dissolve
-    md"{i}That bastard… Remember what i said about the good guy thing? Forget about it.{/i}"
-    md"{i} Well, going back to what I was saying earlier… I knew it, right? I wonder what the hell does Wright want at eight o'clock on a dark, stormy Monday night.{/i}"
+    pause 1
+    mdpov"{i}That bastard… Remember what i said about the good guy thing? Forget about it.{/i}"
+    mdpov"{i} Well, going back to what I was saying earlier… I knew it, right? I wonder what the hell does Wright want at eight o'clock on a dark, stormy Monday night.{/i}"
+
 
     pause 1
+    scene black with Dissolve(4.0)
+    play sound "footsteps_normal.ogg"
+    $ renpy.pause(3, hard=True)
     scene bg_comisaria
     with dissolve
+    pause 1
+
 
     md "{i} I stride aggressively towards her desk, where I find her robotically stamping papers.{/i}"
-    md " Ehmmm…{w=0.5} Hello? Did you ask for me?"
-    md "I ran into Agent Jones when {b} I was about going home {/b} , you know? He told me you needed something."
-    md huh"{i}She just keeps on stamping the documents, ignoring my presence completely. {/i}"
-    md annoyed"Excuse me?"
-    md "..."
-    md mad"{i}Dammit Victoria! Pay attention to me!{/i}"
-
-    show victoria normal
+    md happy" Ehmmm…{w=0.5} Hello? Did you ask for me?"
+    md doubt "I ran into Agent Jones when {b} I was about going home {/b}and he told me..."
+    md mad"{i}She just keeps on stamping the documents, ignoring my presence completely. {/i}"
+    md huh"Excuse me?"
+    md angry"..."
+    md mad"{i}Dammit Victoria! {w=0.5}Pay {w=0.5}attention {w=0.5}to {w=0.5}me!{/i}"
+    stop music fadeout 2.0
+    play music "sad.ogg" fadeout 1.0 fadein 8.0
+    pause 1
+    show victoria surprised
     with dissolve
 
     wr "Ah! You are here already."
-    md "{i}She notices now?{/i}"
-    wr " Excuse me, Jefferson. I was trying to finish sorting these documents."
+    md huh"{i}She notices now?{/i}"
+    show victoria normal
+    with dissolve
+    wr" Excuse me, Jefferson. I was trying to finish sorting these documents."
     wr "Yes, I was looking for you. I’m sorry to call you out at this hour, but something suddenly came. Were you leaving already?"
-    md "{i}Inspector looked somehow worn out. She has been probably working more than 14 hours.{/i}"
-    md happy"Yeah, I was about to leave. I have something...to do."
-    md happy"{i}Of course I won’t confess my plans to her.{/i}"
-    show wright happy
+    md worrid"{i}Inspector looked somehow worn out.{/i}"
+    md happy"Yeah, I was about to leave. I have... something to do."
+    md doubt"{i}Of course I won’t confess my plans to her.{/i}"
+    show victoria worried
     with dissolve
     wr "Oh… So you have plans for tonight."
-    md "{i}Now she seems disappointed… Well, I’m sorry for not living here and having a life, you know?{/i}"
+    md huh"{i}Now she seems disappointed… Well, I’m sorry for not living here and having a life, you know?{/i}"
     wr "Are those plans really urgent, right?"
-    md "{i}Now I was sure. I can cancel the date thing already. Wright, who never seems interested in asking personal questions was standing before me, almost begging me to stay.{/i}"
-    md "{i}She was being so exceptionally inquisitve I almost grew interested about what was going on.{/i}"
-    wr "Well then, see you tomorrow, I guess?"
-    md "{i}Her smile made my blood run cold.{/i}"
-    md"Aren’t you going home, boss?"
+    md doomed"{i}Now I was sure. I can cancel the date thing already. Wright, who never seems interested in asking personal questions was standing before me, almost begging me to stay.{/i}"
+    md doubt"{i}She was being so exceptionally inquisitve I almost grew interested about what was going on.{/i}"
+    show victoria thinking
+    with dissolve
+    wr "..."
+    pause 2
+    show victoria smile
+    with dissolve
+    wr "Well then, I guess It can't be helped. See you tomorrow, Jefferson."
+    md worried"{i}Her smile made my blood run cold.{/i}"
+    md "Aren’t you going home, boss?"
+    show victoria surprised
+    with dissolve
     wr "I still have some things to finish tonight."
-    md "{i}I kind of feel bad about this...{/i}"
+    md worried"{i}I kind of feel bad about this...{/i}"
+    show victoria smile
+    with dissolve
     wr "Don’t make such a face! We can talk about this tomorrow."
 menu:
     "Leave.":

@@ -156,6 +156,7 @@ image side reilly mad = Image("chars/reilly/reilly mad.png", xalign=0.0, yalign=
 image side reilly proud = Image("chars/reilly/reilly proud.png", xalign=0.0, yalign=1.0)
 image side reilly surprised = Image("chars/reilly/reilly surprised.png", xalign=0.0, yalign=1.0)
 image side reilly doomed = Image("chars/reilly/reilly doomed.png", xalign=0.0, yalign=1.0)
+image side reilly worried = Image("chars/reilly/reilly worried.png", xalign=0.0, yalign=1.0)
 
 transform change_transform(old, new):
     contains:
