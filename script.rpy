@@ -1,4 +1,4 @@
-﻿    # Character list
+﻿# Character list
 define md = Character("Detective Reilly", image="reilly")
 define mdpov = Character("Detective Reilly", image="none")
 define wr = Character("Inspector Wright")
@@ -7,7 +7,7 @@ define agente = Character("Officer Jones", image="jones")
 label start:
     $ quick_menu = False
     stop music
-    play music "tension.ogg" fadeout 1.0 fadein 8.0
+    play music "music_tension.ogg" fadeout 1.0 fadein 8.0
     # Intro
     scene black with Dissolve(4.0, hard=True)
     $ renpy.pause(3, hard=True)

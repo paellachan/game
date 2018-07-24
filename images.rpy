@@ -1,147 +1,158 @@
 ################################################################
+#Victoria
+################################################################
+####Blinking
+image victoria_blink:
+    choice(5.0):
+        "victoriablank"
+    choice:
+        "victoriablink"
+        pause 0.1
+        "victoriablank"
+
+    choice:
+        "victoriablink"
+        pause 0.1
+        "victoriablank"
+    pause 1.0
+    repeat
+####Body
+image victoria shocked:
+    LiveComposite (
+        (922,1093),
+        (0,0), "images/chars/wright/victoria_body_normal.png",
+        (0,0), "images/chars/wright/victoria_shocked.png",
+        (0,0), "victoria_blink",
+        )
+image victoria serious:
+    LiveComposite (
+        (922,1093),
+        (0,0), "images/chars/wright/victoria_body_normal.png",
+        (0,0), "images/chars/wright/victoria_serious.png",
+        )
+image victoria normal:
+    LiveComposite (
+        (922,1093),
+        (0,0), "images/chars/wright/victoria_body_normal.png",
+        (0,0), "images/chars/wright/victoria_normal.png",
+        (0,0), "victoria_blink",
+        )
+image victoria okay:
+    LiveComposite (
+        (922,1093),
+        (0,0), "images/chars/wright/victoria_body_normal.png",
+        (0,0), "images/chars/wright/victoria_okay.png",
+        )
+image victoria smile:
+    LiveComposite (
+        (922,1093),
+        (0,0), "images/chars/wright/victoria_body_normal.png",
+        (0,0), "images/chars/wright/victoria_smile.png",
+        (0,0), "victoria_blink",
+        )
+image victoria surprised:
+    LiveComposite (
+        (922,1093),
+        (0,0), "images/chars/wright/victoria_body_normal.png",
+        (0,0), "images/chars/wright/victoria_surprised.png",
+        (0,0), "victoria_blink",
+        )
+image victoria thinking:
+    LiveComposite (
+        (922,1093),
+        (0,0), "images/chars/wright/victoria_body_cross.png",
+        (0,0), "images/chars/wright/victoria_thinking.png",
+        (0,0), "victoria_blink",
+        )
+image victoria worried:
+    LiveComposite (
+        (922,1093),
+        (0,0), "images/chars/wright/victoria_body_normal.png",
+        (0,0), "images/chars/wright/victoria_worried.png",
+        (0,0), "victoria_blink",
+        )
+################################################################
 #Jones
 ################################################################
 
-####Eyes
-image joneseyes1 = "images/chars/jones/exp/jones_eyes_normal.png"
-image joneseyes2 = "images/chars/jones/exp/jones_eyes_mad.png"
-image joneseyes3 = "images/chars/jones/exp/jones_eyes_sorry.png"
-image joneseyes4 = "images/chars/jones/exp/jones_eyes_surprise.png"
-image joneswink = "images/chars/jones/exp/jones_eyes_wink.png"
 ####Blinking
 image jones_blink:
     choice(5.0):
-        "joneseyes1"
+        "jonesblank"
     choice:
-        "joneswink"
+        "jonesblink"
         pause 0.1
-        "joneseyes1"
+        "jonesblank"
 
     choice:
-        "joneswink"
+        "jonesblink"
         pause 0.1
-        "joneseyes1"
+        "jonesblank"
     pause 1.0
     repeat
-image jones_blinkmad:
-    choice(5.0):
-        "joneseyes2"
-    choice:
-        "joneswink"
-        pause 0.1
-        "joneseyes2"
 
-    choice:
-        "joneswink"
-        pause 0.1
-        "joneseyes2"
-    pause 1.0
-    repeat
-image jones_blinksorry:
-    choice(5.0):
-        "joneseyes3"
-    choice:
-        "joneswink"
-        pause 0.1
-        "joneseyes3"
-
-    choice:
-        "joneswink"
-        pause 0.1
-        "joneseyes3"
-    pause 1.0
-    repeat
-image jones_blinksurprise:
-    choice(5.0):
-        "joneseyes4"
-    choice:
-        "joneswink"
-        pause 0.1
-        "joneseyes4"
-        pause 0.1
-        "joneswink"
-        pause 0.1
-        "joneseyes4"
-    choice:
-        "joneswink"
-        pause 0.1
-        "joneseyes4"
-    pause 1.0
-    repeat
-####Eyes
 image jones normal:
     LiveComposite (
-        (497,912),
+        (501,912),
         (0,0), "images/chars/jones/jones_body.png",
-        (0,0), "images/chars/jones/exp/jones_mouth_normal.png",
+        (0,0), "images/chars/jones/jones_normal.png",
         (0,0), "jones_blink",
-        (0,0), "images/chars/jones/exp/jones_eyebrows_normal.png"
         )
 image jones serious:
     LiveComposite (
-        (497,912),
+        (501,912),
         (0,0), "images/chars/jones/jones_body.png",
-        (0,0), "images/chars/jones/exp/jones_mouth_serious.png",
+        (0,0), "images/chars/jones/jones_serious.png",
         (0,0), "jones_blink",
-        (0,0), "images/chars/jones/exp/jones_eyebrows_serious.png"
         )
 image jones mad:
     LiveComposite (
-        (497,912),
+        (501,912),
         (0,0), "images/chars/jones/jones_body.png",
-        (0,0), "images/chars/jones/exp/jones_mouth_serious.png",
-        (0,0), "jones_blinkmad",
-        (0,0), "images/chars/jones/exp/jones_eyebrows_mad.png"
+        (0,0), "images/chars/jones/jones_mad.png",
+        (0,0), "jones_blink",
         )
 image jones sorry:
     LiveComposite (
-        (497,912),
+        (501,912),
         (0,0), "images/chars/jones/jones_body.png",
-        (0,0), "images/chars/jones/exp/jones_mouth_doubt.png",
-        (0,0), "jones_blinksorry",
-        (0,0), "images/chars/jones/exp/jones_sweat.png",
-        (0,0), "images/chars/jones/exp/jones_eyebrows_sorry.png"
+        (0,0), "images/chars/jones/jones_sorry.png",
+        (0,0), "jones_blink",
         )
 image jones smile:
     LiveComposite (
-        (497,912),
+        (501,912),
         (0,0), "images/chars/jones/jones_body.png",
-        (0,0), "images/chars/jones/exp/jones_mouth_laugh.png",
-        (0,0), "images/chars/jones/exp/jones_eyes_wink.png",
-        (0,0), "images/chars/jones/exp/jones_eyebrows_normal.png"
+        (0,0), "images/chars/jones/jones_smile.png",
+        (0,0), "jones_blink",
         )
 image jones surprise:
     LiveComposite (
-        (497,912),
+        (501,912),
         (0,0), "images/chars/jones/jones_body.png",
-        (0,0), "images/chars/jones/exp/jones_mouth_surprise.png",
-        (0,0), "jones_blinksurprise",
-        (0,0), "images/chars/jones/exp/jones_eyebrows_normal.png"
+        (0,0), "images/chars/jones/jones_surprised.png",
+        (0,0), "jones_blink",
         )
 image jones pleasant:
     LiveComposite (
-        (497,912),
+        (501,912),
         (0,0), "images/chars/jones/jones_body.png",
-        (0,0), "images/chars/jones/exp/jones_mouth_laugh.png",
+        (0,0), "images/chars/jones/jones_pleasant.png",
         (0,0), "jones_blink",
-        (0,0), "images/chars/jones/exp/jones_eyebrows_normal.png"
         )
 image jones doubt:
     LiveComposite (
-        (497,912),
+        (501,912),
         (0,0), "images/chars/jones/jones_body.png",
-        (0,0), "images/chars/jones/exp/jones_mouth_doubt.png",
-        (0,0), "images/chars/jones/exp/jones_sweat.png",
-        (0,0), "images/chars/jones/exp/jones_eyes_doubt.png",
-        (0,0), "images/chars/jones/exp/jones_eyebrows_sorry.png"
+        (0,0), "images/chars/jones/jones_doubt.png",
+        (0,0), "jones_blink",
         )
 image jones evil:
     LiveComposite (
-        (497,912),
+        (501,912),
         (0,0), "images/chars/jones/jones_body.png",
-        (0,0), "images/chars/jones/exp/jones_mouth_laugh.png",
-        (0,0), "images/chars/jones/exp/jones_eyes_cynic.png",
-        (0,0), "images/chars/jones/exp/jones_eyebrows_mad.png"
+        (0,0), "images/chars/jones/jones_evil.png",
+        (0,0), "jones_blink",
         )
 
 ################################################################
@@ -157,7 +168,9 @@ image side reilly proud = Image("chars/reilly/reilly proud.png", xalign=0.0, yal
 image side reilly surprised = Image("chars/reilly/reilly surprised.png", xalign=0.0, yalign=1.0)
 image side reilly doomed = Image("chars/reilly/reilly doomed.png", xalign=0.0, yalign=1.0)
 image side reilly worried = Image("chars/reilly/reilly worried.png", xalign=0.0, yalign=1.0)
-
+image side reilly shy = Image("chars/reilly/reilly shy.png", xalign=0.0, yalign=1.0)
+image side reilly fool = Image("chars/reilly/reilly fool.png", xalign=0.0, yalign=1.0)
+image side reilly thinking = Image("chars/reilly/reilly thinking.png", xalign=0.0, yalign=1.0)
 transform change_transform(old, new):
     contains:
         old
