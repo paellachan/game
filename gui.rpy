@@ -52,6 +52,7 @@ define gui.text_color = '#ffffff'
 define gui.interface_text_color = '#ffffff'
 
 
+
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
@@ -220,11 +221,13 @@ define gui.choice_button_text_hover_color = "#ffffff"
 ## image files in gui/button, like the other kinds of buttons.
 
 ## The save slot button.
-define gui.slot_button_width = 414
-define gui.slot_button_height = 309
-define gui.slot_button_borders = Borders(15, 15, 15, 15)
-define gui.slot_button_text_size = 21
+define gui.slot_button_width = 413
+define gui.slot_button_height = 307
+define gui.slot_button_borders = Borders(20, 20, 20, 20)
+define gui.slot_button_text_size = 10
+define gui.slot_button_text_color = "#ffffff"
 define gui.slot_button_text_xalign = 0.5
+define gui.slot_button_text_yalign = 0.9
 define gui.slot_button_text_idle_color = gui.idle_small_color
 
 ## The width and height of thumbnails used by the save slots.
@@ -253,9 +256,8 @@ define gui.notify_ypos = 68
 
 ## The spacing between menu choices.
 define gui.choice_spacing = 120
-
 ## Buttons in the navigation section of the main and game menus.
-define gui.navigation_spacing = 6
+define gui.navigation_spacing = 70
 
 ## Controls the amount of spacing between preferences.
 define gui.pref_spacing = 15
@@ -267,7 +269,7 @@ define gui.pref_button_spacing = 0
 define gui.page_spacing = 0
 
 ## The spacing between file slots.
-define gui.slot_spacing = 15
+define gui.slot_spacing = 20
 
 ## The position of the main menu text.
 define gui.main_menu_text_xalign = 1.0

@@ -290,11 +290,10 @@ style quick_button_text:
 screen navigation():
 
     hbox:
-
-        xalign 0.9
-        yalign 0.9
-
-        textbutton _("Load") action ShowMenu("load")
+        xalign 0.5
+        yalign 0.8
+        spacing gui.navigation_spacing
+        textbutton _("Load")  action ShowMenu("load") hover_sound "audio_phone_dialing.ogg"
         textbutton _("New Game") action Start()
         textbutton _("Preferences") action ShowMenu("preferences")
         textbutton _("Quit") action Quit(confirm=not main_menu)
@@ -402,7 +401,7 @@ style main_menu_frame:
 style main_menu_vbox:
     xalign 1.0
     xoffset -150
-    xmaximum 1200
+    xmaximum 1185
     yalign 0.5
     yoffset -30
 
@@ -611,7 +610,7 @@ screen load():
     tag menu
 
     use file_slots(_("Load"))
-    add "gui/loadgame.png" xalign 0.3 yalign 0.15
+    add "gui/loadgame.png" xalign 0.3 yalign 0.1
     grid 2 2:
         xalign 0.8
         yalign 0.15
@@ -629,21 +628,21 @@ screen file_slots(title):
     use game_menu(title)
 
     grid gui.file_slot_cols gui.file_slot_rows:
-        xsize 800
+        xsize 1185
         xalign 0.5
         yalign 0.5
 
-        spacing 10
+        spacing 30
         for i in range(gui.file_slot_cols * gui.file_slot_rows):
             $ slot = i + 1
 
             button:
-                xsize 190
-                ysize 175
+                xsize 413
+                ysize 307
                 action FileAction(slot)
                 add "gui/slot.png"
                 vbox:
-                    add FileScreenshot(slot) xalign 0.5 size(190,125)
+                    add FileScreenshot(slot) xalign 0.5  size(384,216)
                     text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
                             xalign 0.5
                 add "gui/slotborder.png"
@@ -652,8 +651,8 @@ screen file_slots(title):
     #numbers
     hbox:
         xalign 0.5
-        yalign 0.8
-        spacing 20
+        yalign 0.9
+        spacing 40
 
         for i in range(1,6):
             textbutton "[i]" text_size 40 action FilePage(i)
@@ -770,8 +769,6 @@ style slot_button_text:
 screen preferences():
 
     tag menu
-
-    use game_menu(_("Preferences"), scroll="viewport"):
 
         vbox:
 

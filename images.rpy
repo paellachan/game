@@ -17,6 +17,13 @@ image victoria_blink:
     pause 1.0
     repeat
 ####Body
+image victoria shy:
+    LiveComposite (
+        (922,1093),
+        (0,0), "images/chars/wright/victoria_body_normal.png",
+        (0,0), "images/chars/wright/victoria_shy.png",
+        (0,0), "victoria_blink",
+        )
 image victoria shocked:
     LiveComposite (
         (922,1093),
