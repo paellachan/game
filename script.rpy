@@ -3,6 +3,7 @@ define md = Character("Detective Reilly", image="reilly")
 define mdpov = Character("Detective Reilly", image="none")
 define wr = Character("Inspector Wright")
 define agente = Character("Officer Jones", image="jones")
+define c = Character("Mrs.Cordelia Goldberg")
 
 label start:
     $ quick_menu = False

@@ -78,6 +78,12 @@ image victoria worried:
         (0,0), "images/chars/wright/victoria_worried.png",
         (0,0), "victoria_blink",
         )
+image victoria worried car:
+    LiveComposite (
+        (922,1093),
+        (80,70), "images/chars/wright/victoria_worried.png",
+        (80,70), "victoria_blink",
+        )
 ################################################################
 #Jones
 ################################################################
@@ -162,9 +168,84 @@ image jones evil:
         (0,0), "jones_blink",
         )
 
+
+################################################################
+#Cordelia
+################################################################
+####Blinking
+image dog_blink:
+    choice(4.0):
+        "victoriablank"
+    choice:
+        "dogblink"
+        pause 0.1
+        "victoriablank"
+
+    choice:
+        "dogblink"
+        pause 0.1
+        "victoriablank"
+    pause 2.0
+    repeat
+
+image cordelia_blink:
+    choice(5.0):
+        "victoriablank"
+    choice:
+        "cordeliablink"
+        pause 0.1
+        "victoriablank"
+
+    choice:
+        "cordeliablink"
+        pause 0.1
+        "victoriablank"
+    pause 1.0
+    repeat
+####Body
+image cordelia annoyed:
+    LiveComposite (
+        (416,890),
+        (0,0), "images/chars/cordelia/cordelia_body.png",
+        (0,0), "images/chars/cordelia/cordelia_annoyed.png",
+        (0,0), "dog_blink",
+        )
+image cordelia smile:
+    LiveComposite (
+        (416,890),
+        (0,0), "images/chars/cordelia/cordelia_body.png",
+        (0,0), "images/chars/cordelia/cordelia_smile.png",
+        (0,0), "cordelia_blink",
+        (0,0), "dog_blink",
+        )
+image cordelia surprised:
+    LiveComposite (
+        (416,890),
+        (0,0), "images/chars/cordelia/cordelia_body.png",
+        (0,0), "images/chars/cordelia/cordelia_surprised.png",
+        (0,0), "cordelia_blink",
+        (0,0), "dog_blink",
+        )
+image cordelia thinking:
+    LiveComposite (
+        (416,890),
+        (0,0), "images/chars/cordelia/cordelia_body.png",
+        (0,0), "images/chars/cordelia/cordelia_thinking.png",
+        (0,0), "cordelia_blink",
+        (0,0), "dog_blink",
+        )
+image cordelia normal:
+    LiveComposite (
+        (416,890),
+        (0,0), "images/chars/cordelia/cordelia_body.png",
+        (0,0), "images/chars/cordelia/cordelia_normal.png",
+        (0,0), "cordelia_blink",
+        (0,0), "dog_blink",
+        )
 ################################################################
 # Reilly
 ################################################################
+
 image side reilly normal = Image("chars/reilly/reilly normal.png", xalign=0.0, yalign=1.0)
 image side reilly huh = Image("chars/reilly/reilly huh.png", xalign=0.0, yalign=1.0)
 image side reilly angry = Image("chars/reilly/reilly angry.png", xalign=0.0, yalign=1.0)
@@ -189,5 +270,3 @@ transform change_transform(old, new):
         linear 0.3 alpha 1.0
 
 define config.side_image_change_transform = change_transform
-
-# name of the character.

@@ -19,9 +19,11 @@ init python:
 
 
 ## Colors ######################################################################
-##
-## The colors of text in the interface.
+##set to false when build
+#define config.developer = "True"
 
+
+## The colors of text in the interface.
 ## An accent color used throughout the interface to label and highlight text.
 define gui.accent_color = '#f9f6ed'
 
@@ -221,8 +223,8 @@ define gui.choice_button_text_hover_color = "#ffffff"
 ## image files in gui/button, like the other kinds of buttons.
 
 ## The save slot button.
-define gui.slot_button_width = 413
-define gui.slot_button_height = 307
+define gui.slot_button_width = 280
+define gui.slot_button_height = 160
 define gui.slot_button_borders = Borders(20, 20, 20, 20)
 define gui.slot_button_text_size = 10
 define gui.slot_button_text_color = "#ffffff"
@@ -231,8 +233,8 @@ define gui.slot_button_text_yalign = 0.9
 define gui.slot_button_text_idle_color = gui.idle_small_color
 
 ## The width and height of thumbnails used by the save slots.
-define config.thumbnail_width = 384
-define config.thumbnail_height = 216
+define config.thumbnail_width = 280
+define config.thumbnail_height = 160
 
 ## The number of columns and rows in the grid of save slots.
 define gui.file_slot_cols = 3

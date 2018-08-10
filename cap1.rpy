@@ -5,7 +5,13 @@ label capitulo1:
     with dissolve
     play music "music_comisary_theme.ogg" fadeout 1.0 fadein 8.0
     pause 2
-
+    # show victoria normal at left COMAND SHIFT 7
+    # with dissolve
+    # show jones normal at right
+    # with dissolve
+    # show cordelia normal
+    # with dissolve
+    # c "Hello bitches"
     md "{i}It's almost 8 pm and of course there’s not a soul in the office. I wonder why am I still here. Oh, I remember now… I was caged by my darling boss.{/i}"
     md "{i}I anxiously run towards the door as if a strange hand were to suddenly catch me from behind.{/i}"
     md "{i}It’s been a quiet Monday. Suspiciously, too quiet if you ask me. {/i}"
@@ -92,7 +98,7 @@ label capitulo1:
     pause 1
 
 
-    md "{i} I stride aggressively towards her desk, where I find her robotically stamping papers.{/i}"
+    md "{i} I stride aggressively towards the office, where I find her robotically stamping papers.{/i}"
     md happy"Ehmmm…{w=0.5} Hello? Did you ask for me?"
     md doubt "I ran into Agent Jones when {b} I was about to go home {/b}and he told me..."
     md mad"{i}She just keeps on stamping the documents, ignoring my presence completely. {/i}"
@@ -111,7 +117,7 @@ label capitulo1:
     with dissolve
     wr" Excuse me, Detective. I was finishing sorting these documents."
     wr "That's right, I was looking for you. I’m sorry to call you out at this hour, but something suddenly came up. Were you leaving already?"
-    md worrid"{i}Somehow, the Inspector looked worn out.{/i}"
+    md worrid"{i}Somehow, the Inspector seemed worn out.{/i}"
     md happy"Yeah, I was about to leave. I have... something to do."
     md doubt"{i}Of course I won’t confess my plans to her.{/i}"
     show victoria worried
@@ -132,7 +138,7 @@ label capitulo1:
     wr "Well then, I guess It can't be helped. See you tomorrow, Detective Reilly."
     md worried"{i}Her smile made my blood run cold.{/i}"
     md "Aren’t you going home, boss?"
-    show victoria surprised
+    show victoria okay
     with dissolve
     wr "I still have some things to finish tonight."
     md worried"{i}I feel kind of bad about this...{/i}"
@@ -152,7 +158,7 @@ label leave:
     show victoria okay
     with dissolve
     wr "Yeah. Take care, Detective Reilly"
-    show victoria normal
+    show victoria smile
     with dissolve
     md worried"{i}For some reason I feel horrible now.{/i}"
     md thinking"..."
@@ -196,14 +202,15 @@ label leave:
     show victoria surprised
     with dissolve
     wr "Detective! I thought you left already, did you forget something?"
-    md fool"{i}She's all surprised. Look at my commitment Victoria! I foolishly fantasize. I was embarrassed just at the thought of it.{/i}"
+    md fool"{i}She's all surprised...{/i}"
+    md fool"{i}Look at my commitment Victoria! I foolishly fantasize. I am embarrassed just at the thought of it.{/i}"
     show victoria shy
     with dissolve
     wr "Detective?"
     jump continuar
 
 label stay:
-    md worried"{i}I stand before her for some seconds in silence. A quiet determination takes over me.{/i}"
+    md worried"{i}I stand before her for some seconds in silence.{/i}"
     md worried"{i}I'll feel terrible if I leave her, anyway.{/i}"
     md worried"{i}Charlene will probably kill me for this but...{/i}"
     show victoria surprised
@@ -228,7 +235,7 @@ label continuar:
     show victoria shy
     with dissolve
     md doomed"{i}She glances at me with a tiring look. Who are you trying to fool, Miss Workaholic?{/i}"
-    md shy"It's fine, It's fine!C'mon! Tell me what you need."
+    md shy"It's fine, It's fine! C'mon! Tell me what you need."
     show victoria surprised
     with dissolve
     wr "As you wish then."
@@ -256,18 +263,19 @@ label continuar:
     with dissolve
     pause 1
     md "{i}I follow Victoria to her office in silence.{/i}"
-    md "{i}It's a fairly big room,clean and well organized, as expected from her. There's no sight of any personal item, any trace that could give me information about her life. The smell is somehow different, nicer. Air freshener, maybe?{/i}"
+    md "{i}It's a fairly big room,clean and well organized, as expected from her.{/i}"
+    md "{i}There's no sight of any personal items, any trace that could give me personal information about her. The smell here is somehow different, nicer. Air freshener, maybe?{/i}"
     show victoria normal
     with dissolve
-    wr "Well... I would like to ask you something, Detective Reilly."
+    wr "Well...{w=0.7}May I ask you a question, Detective Reilly?"
     md huh"{i}Two years working with her and she still calls me Detective Reilly...{/i}"
     md fool"{i}Gosh Victoria, Is Jeff that hard to pronounce?{/i}"
     pause 1
     show victoria serious
     with dissolve
     wr "Have you seen the news this morning?"
-    md happy"Yeah, I did."
-    md doubt"{i}I'm surprised by the odd question, though.{/i}"
+    md happy"Yeah!"
+    md doubt"{i}For a moment I thought She will ask me about what I was supposed to do tonight.{/i}"
     show victoria thinking
     with dissolve
     wr "And tell me...Was there any headline that called your attention?"
@@ -279,20 +287,30 @@ label continuar:
     pause 1
     show victoria normal
     with dissolve
-    wr "Charles Goldstein, the chairman of the biggest bank in this city was found dead at his home in the West Suburvs."
+    wr "Charles Goldberg,the chairman of one of the biggest banks of the country died."
     md surprised"Oh, that! He had a heart attack, didn't he?"
-    md doubt"An male in almost his sixties, and stressful job, more likely not leading the healthiest life style...A heart attack sounds probable enough."
+    show victoria normal
+    with dissolve
+    wr "He was found dead at his home in the West Suburbs. Apparently he was working at his home office at the time of the death."
     show victoria thinking
     with dissolve
-    wr "It may be the case. But..."
+    wr "When the housekeeper went to check for dinner,the door was locked from the inside and no one responded. After awhile she got worried and called the police."
+    md surprised"She didn't have the key?"
+    wr "Only the victim and his wife own the key."
+    md doomed"{i}The victim?... Hold on there, Victoria.{/i}"
+    md huh"Anyway..."
+    md doubt"A male in almost his sixties with a stressful job, probably not leading the healthiest life style...A heart attack sounds plausible enough for me."
+    show victoria thinking
+    with dissolve
+    wr "It may be the case. {w=0.7}But the question is..."
     show victoria serious
     with dissolve
-    wr "The question is...What was the cause."
+    wr "What was the cause."
     stop music fadeout 5.0
     play music "music_mystery.ogg" fadeout 1.0 fadein 5.0
     md surprised"Huh? What do you mean?"
     wr "Here, take a look at that."
-    md surprised"{i}Victoria takes a printed paper from her bilder and hands it over me.{/i}"
+    md huh"{i}Victoria takes a printed paper from her bilder and hands it over to me.{/i}"
     $ quick_menu = False
     window hide dissolve
     show mail
@@ -302,7 +320,8 @@ label continuar:
     window show dissolve
     $ quick_menu = True
     md huh"What the hell is that?"
-    md thinking"Any pshycho could have written something like that... The new has been published and broadcasted all over the country.{w=0.7}It can just be a grim joke..."
+    md thinking"Any pshycho could have written something like that... The new has been published and broadcasted all over the country."
+    md huh"Couldn't it just be a grim joke?"
     show victoria thinking
     with dissolve
     wr "That's the first think I thought..."
@@ -314,7 +333,7 @@ label continuar:
     md doubt"..."
     wr "Here."
     pause 1
-    md worried "{i}Victoria places a handful of stapled papers over the desk. As I look closer, I identify what seem the results of a blood test analysis.{/i}"
+    md worried "{i}Victoria places a handful of stapled papers over the desk. As I look closer, I identify what seems the results of a blood test analysis.{/i}"
     $ quick_menu = False
     window hide dissolve
     show mail2
@@ -325,12 +344,36 @@ label continuar:
     $ quick_menu = True
     show victoria worried
     with dissolve
-    wr "I spent the last four hours trying to unravel wether they counterfeit or not."
-    md shocked"And they are?"
+    md doubt"What's that?"
     show victoria serious
     with dissolve
-    wr "I'm afraid we have a case."
-
-
-
+    wr "A blood test results from, allegedly, Charles Golberg."
+    show victoria thinking
+    with dissolve
+    wr "And It's not a routinary blood test, I must say."
+    show victoria thinking
+    with dissolve
+    wr "Is very likely that the victim suspected he was being poisoned."
+    md surprised"Poisoned?"
+    wr "I spent the last four hours trying to unravel wether they're counterfeit or not."
+    md doubt"And they are?"
+    show victoria serious
+    with dissolve
+    wr "I'm afraid...{w=0.7}We have a case."
+    pause 1
+    md huh"Wait{w=0.7}.{w=0.7}.{w=0.7}."
+    with hpunch
+    md surprised"Whaat?"
+    show victoria normal
+    with dissolve
+    pause 2
+    stop music fadeout 3.0
+    scene black with Dissolve(2.0, hard=True)
+    $ renpy.pause(3, hard=True)
+    show text "West District Commissary, 8:46 P.M." at truecenter
+    with dissolve
+    $ renpy.pause(4, hard=True)
+    hide text
+    with dissolve
+    jump capitulo2
     return

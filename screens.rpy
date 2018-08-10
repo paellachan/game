@@ -290,13 +290,14 @@ style quick_button_text:
 screen navigation():
 
     hbox:
-        xalign 0.5
-        yalign 0.8
+        xalign 0.8
+        yalign 0.94
         spacing gui.navigation_spacing
-        textbutton _("Load")  action ShowMenu("load") hover_sound "audio_phone_dialing.ogg"
-        textbutton _("New Game") action Start()
-        textbutton _("Preferences") action ShowMenu("preferences")
-        textbutton _("Quit") action Quit(confirm=not main_menu)
+
+        textbutton _("Load")  action ShowMenu("load") hover_sound "audio_switch.wav" text_color"#000000" text_hover_color"#fcff00"  text_size 28 hover_background "#000000" text_hover_size 34
+        textbutton _("New Game") action Start() hover_sound "audio_switch.wav" text_color"#000000" text_hover_color"#fcff00" text_size 28 hover_background "#000000" text_hover_size 34
+        textbutton _("Preferences") action ShowMenu("preferences") hover_sound "audio_switch.wav" text_color"#000000" text_hover_color"fcff00" text_size 28 hover_background "#000000" text_hover_size 34
+        textbutton _("Quit") action Quit(confirm=not main_menu) hover_sound "audio_switch.wav" text_color"#000000" text_hover_color"fcff00" text_size 28 hover_background "#000000" text_hover_size 34
 
     # vbox:
     #     style_prefix "navigation"
@@ -594,31 +595,29 @@ screen save():
     tag menu
 
     use file_slots(_("Save"))
-    add "gui/savegame.png" xalign 0.3 yalign 0.15
-    grid 2 2:
-        xalign 0.8
-        yalign 0.15
-        spacing 5
-        textbutton "back" action Return() xalign 1.0
-        textbutton "load" action ShowMenu('load')
-        textbutton "options" action ShowMenu('preferences')
-        textbutton "title" action ShowMenu('main_menu')
-
+    add "gui/savegame.png" xalign 0.03 yalign 0.02
+    hbox:
+        xalign 0.98
+        yalign 0.1
+        spacing 10
+        textbutton "Back" action Return() hover_sound "audio_switch.wav" text_color"#ffffff" text_hover_color"#000000"  text_size 20 hover_background "#fcff00" text_hover_size 24
+        textbutton "load" action ShowMenu('load')hover_sound "audio_switch.wav" text_color"#ffffff" text_hover_color"#000000"  text_size 20 hover_background "#fcff00" text_hover_size 24
+        textbutton "Preferences" action ShowMenu('preferences')hover_sound "audio_switch.wav" text_color"#ffffff" text_hover_color"#000000"  text_size 20 hover_background "#fcff00" text_hover_size 24
+        textbutton "Title" action ShowMenu('main_menu')hover_sound "audio_switch.wav" text_color"#ffffff" text_hover_color"#000000"  text_size 20 hover_background "#fcff00" text_hover_size 24
 
 screen load():
 
     tag menu
 
     use file_slots(_("Load"))
-    add "gui/loadgame.png" xalign 0.3 yalign 0.1
-    grid 2 2:
-        xalign 0.8
-        yalign 0.15
-        spacing 5
-        textbutton "back" action Return() xalign 1.0
-        textbutton "save" action ShowMenu('save')
-        textbutton "options" action ShowMenu('preferences')
-        textbutton "title" action ShowMenu('main_menu')
+    add "gui/loadgame.png" xalign 0.03 yalign 0.02
+    hbox:
+        xalign 0.98
+        yalign 0.1
+        spacing 10
+        textbutton "Back" action Return() hover_sound "audio_switch.wav" text_color"#ffffff" text_hover_color"#000000"  text_size 20 hover_background "#fcff00" text_hover_size 24
+        textbutton "Preferences" action ShowMenu('preferences')hover_sound "audio_switch.wav" text_color"#ffffff" text_hover_color"#000000"  text_size 20 hover_background "#fcff00" text_hover_size 24
+        textbutton "Title" action ShowMenu('main_menu')hover_sound "audio_switch.wav" text_color"#ffffff" text_hover_color"#000000"  text_size 20 hover_background "#fcff00" text_hover_size 24
 
 
 screen file_slots(title):
@@ -631,31 +630,40 @@ screen file_slots(title):
         xsize 1185
         xalign 0.5
         yalign 0.5
-
         spacing 30
         for i in range(gui.file_slot_cols * gui.file_slot_rows):
             $ slot = i + 1
 
             button:
-                xsize 413
-                ysize 307
+                xsize 384
+                ysize 216
                 action FileAction(slot)
-                add "gui/slot.png"
+                background ("gui/slot.png")
+                idle_background ("gui/slot.png")
+                hover_background ("gui/slothover.png")
+                selected_background ("gui/slot.png")
                 vbox:
-                    add FileScreenshot(slot) xalign 0.5  size(384,216)
-                    text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+                    xalign 0.5
+                    yalign 0.5
+                    add FileScreenshot(slot):
+                         xalign 0.5
+                         yalign 0.5
+                         size(280,160)
+                    text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("Empty slot")):
                             xalign 0.5
-                add "gui/slotborder.png"
+                            yalign 0.99
+                            size 20
+                            color "#000000"
                 key "save_delete" action FileDelete(slot)
 
     #numbers
     hbox:
-        xalign 0.5
-        yalign 0.9
+        xalign 0.1
+        yalign 0.95
         spacing 40
-
+        add "gui/navigationgame.png"
         for i in range(1,6):
-            textbutton "[i]" text_size 40 action FilePage(i)
+            textbutton "[i]" hover_sound "audio_switch.wav" text_color"#000000" text_hover_color"#fcff00"  text_size 28 hover_background "#000000" text_hover_size 34 action FilePage(i)
 
 #         fixed:
 #
