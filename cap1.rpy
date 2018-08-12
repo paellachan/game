@@ -15,7 +15,8 @@ label capitulo1:
     md "{i}It's almost 8 pm and of course there’s not a soul in the office. I wonder why am I still here. Oh, I remember now… I was caged by my darling boss.{/i}"
     md "{i}I anxiously run towards the door as if a strange hand were to suddenly catch me from behind.{/i}"
     md "{i}It’s been a quiet Monday. Suspiciously, too quiet if you ask me. {/i}"
-    md "{i}Such a days make me uneasy. It may sound weird but… have you ever experienced that sensation? That sharp troubled feeling at the back of your mind when everything is going strangely well, and you are almost patiently waiting for something terrible to happen.{/i}"
+    md "{i}Such a days make me uneasy. It may sound weird but… have you ever experienced that sensation?{/i}"
+    md "{i}That sharp troubled feeling at the back of your mind when everything is going strangely well, and you are almost patiently waiting for something terrible to happen.{/i}"
     md "{i}Anyway, I grab my umbrella and jacket and proceed to go. This detective has a date!{/i}"
     md "{i}I look outside disappointedly. Autumn has come abruptly and It’s been raining all day long. The nauseating smell of the overflowed sewers floods the waterlogged streets.{/i}"
     md "{i}Great! This is such a perfect night for an expensive romantic dinner at Dorsia’s. I cannot stop thinking about spending 500 bucks dining with my shoes reeking of shit.{/i}"
@@ -39,12 +40,14 @@ label capitulo1:
     md huh"Hey! If you’re trying to hurt me, try again!"
     show jones normal
     with dissolve
-    md"I’m an attractive young policeman, dude. Let me enjoy the pleasures of this mortal life. Are your perhaps jealous of my freedom, now that you became a respectful happily married man?"
-    md huh"{i}I do deserve a little bit of enjoyment with the living after spending the whole day surrounded by corpses, you know?{/i}"
+    md mad"I’m an attractive young policeman, dude. Let me enjoy the pleasures of this mortal life."
+    md huh"Are your perhaps jealous of my freedom, now that you became a respectful happily married man?"
+    md normal"{i}I do deserve a little bit of enjoyment with the living after spending the whole day surrounded by corpses, you know?{/i}"
     pause 1
     show jones smile
     with dissolve
-    agente "Not at all. In fact I believe it would be better for you to settle down.{w=0.7} Aren’t you tired? I already have enough stress at work to deal with this dating madness of you."
+    agente "Not at all. In fact I believe it would be better for you to settle down."
+    agente "Aren’t you tired? I already have enough stress at work to deal with this dating madness of you."
     show jones normal
     with dissolve
     md huh"Dating madness..."
@@ -80,8 +83,8 @@ label capitulo1:
     md"Don’t go that way buddy… "
     agente smile"And there you go again!"
     md"Anyway...Weren’t you going home?"
-    agente pleasant"hahahaha Okay, okay..."
-    agente normal"See you tomorrow, good luck with Victoria."
+    agente pleasant"Hahahaha Okay, okay..."
+    agente normal"See you tomorrow,and good luck with Victoria."
     md doubt"Yeah, see you tomorrow..."
     hide jones
     with dissolve
@@ -116,14 +119,14 @@ label capitulo1:
     show victoria normal
     with dissolve
     wr" Excuse me, Detective. I was finishing sorting these documents."
-    wr "That's right, I was looking for you. I’m sorry to call you out at this hour, but something suddenly came up. Were you leaving already?"
+    wr "I’m sorry to call you at this hour. Were you leaving already?"
     md worrid"{i}Somehow, the Inspector seemed worn out.{/i}"
     md happy"Yeah, I was about to leave. I have... something to do."
     md doubt"{i}Of course I won’t confess my plans to her.{/i}"
     show victoria worried
     with dissolve
     wr "Oh… So you have plans for tonight."
-    md huh"{i}Now she seems disappointed… Well, I’m sorry for not living here and having a life, you know?{/i}"
+    md huh"{i}She seems disappointed… Well, I’m sorry for having a life, you know?{/i}"
     show victoria thinking
     with dissolve
     wr "Those plans are really urgent, right?"
@@ -186,7 +189,7 @@ label leave:
     mdpov "{i}I did it.{/i}"
     mdpov "{i}I cancelled everything.{/i}"
     mdpov "{i}I guess I can text Charlene later...{w=0.7}Or maybe just fake my own death... Because that girl is sure intense.{/i}"
-    mdpov "{i}I anxiously rush back to the office. Somehow I was secretly content I did what I feel it was right.{/i}"
+    mdpov "{i}I anxiously rush back to the office, somehow secretly content I did what I feel it was right.{/i}"
     pause 1
     scene black with Dissolve(4.0,hard=True)
     play sound "audio_footsteps_normal.ogg"
@@ -262,19 +265,23 @@ label continuar:
     scene bg_comisaria_despacho
     with dissolve
     pause 1
-    md "{i}I follow Victoria to her office in silence.{/i}"
-    md "{i}It's a fairly big room,clean and well organized, as expected from her.{/i}"
-    md "{i}There's no sight of any personal items, any trace that could give me personal information about her. The smell here is somehow different, nicer. Air freshener, maybe?{/i}"
+    md "{i}I follow Victoria in silence.{/i}"
+    md "{i}Her office is a fairly big room,clean and well organized, as expected from her.{/i}"
+    md "{i}There's no sight of any personal items, any trace that could give me information about her. The smell here is somehow different, nicer. Air freshener, maybe?{/i}"
     show victoria normal
     with dissolve
     wr "Well...{w=0.7}May I ask you a question, Detective Reilly?"
     md huh"{i}Two years working with her and she still calls me Detective Reilly...{/i}"
     md fool"{i}Gosh Victoria, Is Jeff that hard to pronounce?{/i}"
+    show victoria surprised
+    with dissolve
+    wr "Detective?"
+    md smile"Yeah! Go ahed!"
     pause 1
     show victoria serious
     with dissolve
     wr "Have you seen the news this morning?"
-    md happy"Yeah!"
+    md happy"I did!"
     md doubt"{i}For a moment I thought She will ask me about what I was supposed to do tonight.{/i}"
     show victoria thinking
     with dissolve
