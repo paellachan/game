@@ -78,6 +78,9 @@ image victoria worried:
         (0,0), "images/chars/wright/victoria_worried.png",
         (0,0), "victoria_blink",
         )
+################################################
+####Car expressions
+################################################
 image victoria worried car:
     LiveComposite (
         (922,1093),
@@ -245,13 +248,74 @@ image cordelia normal:
 ################################################################
 # Reilly
 ################################################################
+# Blinking
+################################################################
+image reilly_blink:
+    choice(4.0):
+        "reillyblank"
+    choice:
+        "reillyblink"
+        pause 0.1
+        "reillyblank"
 
-image side reilly normal = Image("chars/reilly/reilly normal.png", xalign=0.0, yalign=1.0)
+    choice:
+        "reillyblink"
+        pause 0.1
+        "reillyblank"
+    pause 2.0
+    repeat
+# Side image positioning amd scaling
+################################################################
+transform img_align:
+    xalign 0.0 yalign 1.0
+
+transform img_scale:
+    xzoom 1.29 yzoom 1.29
+# Car images
+################################################################
+image reilly normalcar:
+    contains:
+            LiveComposite (
+            (345,443),
+            (820,170), "images/chars/reilly/reilly_normal.png",
+            (820,170), "reilly_blink",
+            )
+            img_scale
+            my_shake
+image reilly madcar:
+    contains:
+            LiveComposite (
+            (345,443),
+            (820,170), "images/chars/reilly/reilly_mad.png",
+            (820,170), "reilly_blink",
+            )
+            img_scale
+            my_shake
+# Side Images
+################################################################
+image side reilly normal:
+    contains:
+            LiveComposite (
+            (345,443),
+            (30,0), "images/chars/reilly/reilly_body.png",
+            (30,0), "images/chars/reilly/reilly_normal.png",
+            (30,0), "reilly_blink",
+            )
+            img_align
+
 image side reilly huh = Image("chars/reilly/reilly huh.png", xalign=0.0, yalign=1.0)
 image side reilly angry = Image("chars/reilly/reilly angry.png", xalign=0.0, yalign=1.0)
 image side reilly doubt = Image("chars/reilly/reilly doubt.png", xalign=0.0, yalign=1.0)
 image side reilly happy = Image("chars/reilly/reilly happy.png", xalign=0.0, yalign=1.0)
-image side reilly mad = Image("chars/reilly/reilly mad.png", xalign=0.0, yalign=1.0)
+image side reilly mad :
+    contains:
+            LiveComposite (
+            (345,443),
+            (30,0), "images/chars/reilly/reilly_body.png",
+            (30,0), "images/chars/reilly/reilly_mad.png",
+            (30,0), "reilly_blink",
+            )
+            img_alignR
 image side reilly proud = Image("chars/reilly/reilly proud.png", xalign=0.0, yalign=1.0)
 image side reilly surprised = Image("chars/reilly/reilly surprised.png", xalign=0.0, yalign=1.0)
 image side reilly doomed = Image("chars/reilly/reilly doomed.png", xalign=0.0, yalign=1.0)
