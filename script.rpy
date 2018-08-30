@@ -1,7 +1,7 @@
 ﻿# Character list
 define md = Character("Detective Reilly", image="reilly")
 define mdpov = Character("Detective Reilly", image="none")
-define wr = Character("Inspector Wright")
+define wr = Character("Inspector Wright", image="victoria")
 define agente = Character("Officer Jones", image="jones")
 define c = Character("Mrs.Cordelia Goldberg")
 define n = Character("Housekeeper Nelly")

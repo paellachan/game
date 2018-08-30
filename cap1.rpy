@@ -5,13 +5,6 @@ label capitulo1:
     with dissolve
     play music "music_comisary_theme.ogg" fadeout 1.0 fadein 8.0
     pause 2
-    # show victoria normal at left COMAND SHIFT 7
-    # with dissolve
-    # show jones normal at right
-    # with dissolve
-    # show cordelia normal
-    # with dissolve
-    # c "Hello bitches"
     md "{i}It's almost 8 pm and of course there’s not a soul in the office. I wonder why am I still here. Oh, I remember now… I was caged by my darling boss.{/i}"
     md "{i}I anxiously run towards the door as if a strange hand were to suddenly catch me from behind.{/i}"
     md "{i}It’s been a quiet Monday. Suspiciously, too quiet if you ask me. {/i}"
@@ -40,13 +33,15 @@ label capitulo1:
     md huh"Hey! If you’re trying to hurt me, try again!"
     show jones normal
     with dissolve
-    md mad"I’m an attractive young policeman, dude. Let me enjoy the pleasures of this mortal life."
+    md proud"I’m an attractive young policeman, dude. Let me enjoy the pleasures of this mortal life."
     md huh"Are your perhaps jealous of my freedom, now that you became a respectful happily married man?"
-    md normal"{i}I do deserve a little bit of enjoyment with the living after spending the whole day surrounded by corpses, you know?{/i}"
+    md fool"{i}I do deserve a little bit of enjoyment with the living after spending the whole day surrounded by corpses, you know?{/i}"
     pause 1
     show jones smile
     with dissolve
     agente "Not at all. In fact I believe it would be better for you to settle down."
+    show jones evil
+    with dissolve
     agente "Aren’t you tired? I already have enough stress at work to deal with this dating madness of you."
     show jones normal
     with dissolve
@@ -72,7 +67,7 @@ label capitulo1:
     agente "I still can tell her you left."
     agente pleasant"But don’t worry, It’s been a very peaceful day. It’s probably nothing."
     md huh"Wanna bet who’s gonna spend the night in the office instead of dining with Charlene?"
-    show jones normal
+    show jones scared
     with dissolve
     agente "She’s a hard nut to crack, uh? Those icy eyes give me goosebumps."
     md doomed"God knows I’ve tried!"
@@ -83,8 +78,8 @@ label capitulo1:
     md"Don’t go that way buddy… "
     agente smile"And there you go again!"
     md"Anyway...Weren’t you going home?"
-    agente pleasant"Hahahaha Okay, okay..."
-    agente normal"See you tomorrow,and good luck with Victoria."
+    agente normal"Hahahaha Okay, okay..."
+    agente smile"See you tomorrow,and good luck with Victoria."
     md doubt"Yeah, see you tomorrow..."
     hide jones
     with dissolve
@@ -230,7 +225,7 @@ label continuar:
     wr "..."
     wr "I see."
     show victoria okay
-    with dissolve
+    with dissolveá
     wr "But..."
     show victoria thinking
     with dissolve
@@ -265,12 +260,12 @@ label continuar:
     scene bg_comisaria_despacho
     with dissolve
     pause 1
-    md "{i}I follow Victoria in silence.{/i}"
-    md "{i}Her office is a fairly big room,clean and well organized, as expected from her.{/i}"
-    md "{i}There's no sight of any personal items, any trace that could give me information about her. The smell here is somehow different, nicer. Air freshener, maybe?{/i}"
+    md "{i}Sigo a Victoria obedientemente en silencio.{/i}"
+    md "{i}Su despacho es una habitación bastante grande. Todo está limpio y bien organizado, como no podía ser de otra manera tratándose de ella.{/i}"
+    md "{i}No hay nada aquí que pueda darme ningún tipo de información personal sobre ella. El olor es agradable, ambientandor quizá?{/i}"
     show victoria normal
     with dissolve
-    wr "Well...{w=0.7}May I ask you a question, Detective Reilly?"
+    wr "Bien...{w=0.7}Podría hacerle una pregunta, Detective Reilly?"
     md huh"{i}Two years working with her and she still calls me Detective Reilly...{/i}"
     md fool"{i}Gosh Victoria, Is Jeff that hard to pronounce?{/i}"
     show victoria surprised
@@ -280,12 +275,12 @@ label continuar:
     pause 1
     show victoria serious
     with dissolve
-    wr "Have you seen the news this morning?"
-    md happy"I did!"
-    md doubt"{i}For a moment I thought She will ask me about what I was supposed to do tonight.{/i}"
+    wr "Ha visto usted las notícias de hoy por casualidad?"
+    md happy"Sí, las he visto. ¿Ha pasado algo?"
+    md doubt"{i}Casi me da un infarto al pensar que iba a preguntarme sobre lo de esta noche otra vez.{/i}"
     show victoria thinking
     with dissolve
-    wr "And tell me...Was there any headline that called your attention?"
+    wr "Dígame, ha habido algo que le haya llamado la atención?"
     md thinking"Hmmm..."
     md doubt"I really don't know... I don't recall anything worth mentioning."
     show victoria okay
@@ -294,14 +289,14 @@ label continuar:
     pause 1
     show victoria normal
     with dissolve
-    wr "Charles Goldberg,the chairman of one of the biggest banks of the country died."
-    md surprised"Oh, that! He had a heart attack, didn't he?"
+    wr "Charles Goldberg, el presidente de uno de los bancos más grandes del país murió ayer por la noche."
+    md surprised"¡Ah, sí! Un ataque fulminante al corazón, no?"
     show victoria normal
     with dissolve
-    wr "He was found dead at his home in the West Suburbs. Apparently he was working at his home office at the time of the death."
+    wr "Fue encontrado muerto en su casa a las afueras del barrio oeste. Aparentemente estaba trabajando en su despacho cuando ocurrió."
     show victoria thinking
     with dissolve
-    wr "When the housekeeper went to check for dinner,the door was locked from the inside and no one responded. After awhile she got worried and called the police."
+    wr "Cuando la ama de llaves fue a avisarle para cenar no obtuvo respuesta alguna. La puerta estaba cerrada desde dentro y después de varios intentos en vano, acabó llamando a la policía. "
     md surprised"She didn't have the key?"
     wr "Only the victim and his wife own the key."
     md doomed"{i}The victim?... Hold on there, Victoria.{/i}"
@@ -374,9 +369,24 @@ label continuar:
     show victoria normal
     with dissolve
     pause 2
-    stop music fadeout 3.0
     scene black with Dissolve(2.0, hard=True)
-    $ renpy.pause(3, hard=True)
+    screen slow_text( txt ):
+        add Text(txt, slow_cps=12) xalign 0.5 yalign 0.5
+    play driving "audio_rain.ogg" fadeout 1.0 fadein 4.0
+    $ renpy.pause(4, hard=True)
+    show screen slow_text('No sé que era...')
+    $ renpy.pause(4, hard=True)
+    show screen slow_text('Quizá me había levantado con el pie izquierdo aquel día.')
+    $ renpy.pause(4, hard=True)
+    hide text with dissolve
+    show screen slow_text('Quizá aquella lluvia incesante era algún tipo de presagio')
+    $ renpy.pause(4, hard=True)
+    hide text with dissolve
+    show text "No sé muy bien como, aquella noche me vi envuelto en algo más turbio de lo que en un principio había imaginado." at truecenter
+    $ renpy.pause(4, hard=True)
+    hide text with dissolve
+    stop music fadeout 3.0
+    $ renpy.pause(4, hard=True)
     show text "West District Commissary, 8:46 P.M." at truecenter
     with dissolve
     $ renpy.pause(4, hard=True)

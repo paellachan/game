@@ -18,6 +18,7 @@ define config.name = _("Mystery Case")
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
 
+define config.layers = [ 'master', 'transient', 'screens','overscreens', 'overlay']
 define gui.show_name = False
 
 
@@ -48,7 +49,6 @@ define config.has_sound = True
 define config.has_music = True
 define config.has_voice = True
 
-
 ## To allow the user to play a test sound on the sound or voice channel,
 ## uncomment a line below and use it to set a sample sound to play.
 
@@ -62,6 +62,8 @@ define config.has_voice = True
 
 define config.main_menu_music = "mainmenu_theme.ogg"
 
+init python:
+    renpy.music.register_channel("driving", mixer=None, loop=True, stop_on_mute=True, tight=False, file_prefix='', file_suffix='', buffer_queue=True, movie=False, framedrop=True)
 
 ## Transitions #################################################################
 ##

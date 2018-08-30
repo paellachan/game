@@ -78,15 +78,60 @@ image victoria worried:
         (0,0), "images/chars/wright/victoria_worried.png",
         (0,0), "victoria_blink",
         )
+
+################################################
+####umbrella expressions
+################################################
+image victoria thinkingumb:
+    LiveComposite (
+        (922,1093),
+        (0,0), "images/chars/wright/victoria_body_rain.png",
+        (0,0), "images/chars/wright/victoria_thinking.png",
+        (0,0), "victoria_blink",
+        )
+
 ################################################
 ####Car expressions
 ################################################
-image victoria worried car:
-    LiveComposite (
-        (922,1093),
-        (80,70), "images/chars/wright/victoria_worried.png",
-        (80,70), "victoria_blink",
-        )
+image victoria thinkingcar:
+    contains:
+        LiveComposite (
+            (922,1093),
+            (80,70), "images/chars/wright/victoria_thinking.png",
+            )
+        my_shake
+image victoria worriedcar:
+    contains:
+        LiveComposite (
+            (922,1093),
+            (80,70), "images/chars/wright/victoria_worried.png",
+            (80,70), "victoria_blink",
+            )
+        my_shake
+image victoria readingcar:
+    contains:
+        LiveComposite (
+            (922,1093),
+            (80,70), "images/chars/wright/victoria_reading.png",
+            (80,70), "victoria_blink",
+            )
+        my_shake
+image victoria realizingcar:
+    contains:
+        LiveComposite (
+            (922,1093),
+            (80,70), "images/chars/wright/victoria_realizing.png",
+            (80,70), "victoria_blink",
+            )
+        my_shake
+image victoria normalcar:
+    contains:
+        LiveComposite (
+            (922,1093),
+            (80,70), "images/chars/wright/victoria_normal.png",
+            (80,70), "victoria_blink",
+            )
+        my_shake
 ################################################################
 #Jones
 ################################################################
@@ -112,6 +157,13 @@ image jones normal:
         (501,912),
         (0,0), "images/chars/jones/jones_body.png",
         (0,0), "images/chars/jones/jones_normal.png",
+        (0,0), "jones_blink",
+        )
+image jones scared:
+    LiveComposite (
+        (501,912),
+        (0,0), "images/chars/jones/jones_body.png",
+        (0,0), "images/chars/jones/jones_scared.png",
         (0,0), "jones_blink",
         )
 image jones serious:
@@ -140,7 +192,6 @@ image jones smile:
         (501,912),
         (0,0), "images/chars/jones/jones_body.png",
         (0,0), "images/chars/jones/jones_smile.png",
-        (0,0), "jones_blink",
         )
 image jones surprise:
     LiveComposite (
@@ -154,7 +205,6 @@ image jones pleasant:
         (501,912),
         (0,0), "images/chars/jones/jones_body.png",
         (0,0), "images/chars/jones/jones_pleasant.png",
-        (0,0), "jones_blink",
         )
 image jones doubt:
     LiveComposite (
@@ -273,6 +323,41 @@ transform img_scale:
     xzoom 1.29 yzoom 1.29
 # Car images
 ################################################################
+image reilly doubtcar:
+    contains:
+            LiveComposite (
+            (345,443),
+            (820,170), "images/chars/reilly/reilly_doubt.png",
+            (820,170), "reilly_blink",
+            )
+            img_scale
+            my_shake
+image reilly surprisedcar:
+    contains:
+            LiveComposite (
+            (345,443),
+            (820,170), "images/chars/reilly/reilly_surprisedcar.png",
+            (820,170), "reilly_blink",
+            )
+            img_scale
+            my_shake
+image reilly failcar:
+    contains:
+            LiveComposite (
+            (345,443),
+            (820,170), "images/chars/reilly/reilly_fail.png",
+            (820,170), "reilly_blink",
+            )
+            img_scale
+            my_shake
+image reilly failcar2:
+    contains:
+            LiveComposite (
+            (345,443),
+            (820,170), "images/chars/reilly/reilly_fail2.png",
+            )
+            img_scale
+            my_shake
 image reilly normalcar:
     contains:
             LiveComposite (
@@ -291,6 +376,39 @@ image reilly madcar:
             )
             img_scale
             my_shake
+image reilly doomedcar:
+    contains:
+            LiveComposite (
+            (345,443),
+            (820,170), "images/chars/reilly/reilly_doomed.png",
+            )
+            img_scale
+            my_shake
+image reilly shycar:
+    contains:
+            LiveComposite (
+            (345,443),
+            (820,170), "images/chars/reilly/reilly_shy.png",
+            (820,170), "reilly_blink",
+            )
+            img_scale
+            my_shake
+image reilly thinkingcar:
+    contains:
+            LiveComposite (
+            (345,443),
+            (820,170), "images/chars/reilly/reilly_thinking.png",
+            )
+            img_scale
+            my_shake
+image reilly car:
+    contains:
+            LiveComposite (
+            (345,443),
+            (820,170), "images/chars/reilly/reilly_car.png",
+            )
+            img_scale
+            my_shake
 # Side Images
 ################################################################
 image side reilly normal:
@@ -302,12 +420,42 @@ image side reilly normal:
             (30,0), "reilly_blink",
             )
             img_align
-
-image side reilly huh = Image("chars/reilly/reilly huh.png", xalign=0.0, yalign=1.0)
-image side reilly angry = Image("chars/reilly/reilly angry.png", xalign=0.0, yalign=1.0)
-image side reilly doubt = Image("chars/reilly/reilly doubt.png", xalign=0.0, yalign=1.0)
-image side reilly happy = Image("chars/reilly/reilly happy.png", xalign=0.0, yalign=1.0)
-image side reilly mad :
+image side reilly huh:
+    contains:
+            LiveComposite (
+            (345,443),
+            (30,0), "images/chars/reilly/reilly_body.png",
+            (30,0), "images/chars/reilly/reilly_huh.png",
+            (30,0), "reilly_blink",
+            )
+            img_align
+image side reilly angry:
+    contains:
+            LiveComposite (
+            (345,443),
+            (30,0), "images/chars/reilly/reilly_body.png",
+            (30,0), "images/chars/reilly/reilly_angry.png",
+            (30,0), "reilly_blink",
+            )
+            img_align
+image side reilly doubt:
+    contains:
+            LiveComposite (
+            (345,443),
+            (30,0), "images/chars/reilly/reilly_body.png",
+            (30,0), "images/chars/reilly/reilly_doubt.png",
+            (30,0), "reilly_blink",
+            )
+            img_align
+image side reilly happy:
+    contains:
+            LiveComposite (
+            (345,443),
+            (30,0), "images/chars/reilly/reilly_body.png",
+            (30,0), "images/chars/reilly/reilly_happy.png",
+            )
+            img_align
+image side reilly mad:
     contains:
             LiveComposite (
             (345,443),
@@ -315,14 +463,66 @@ image side reilly mad :
             (30,0), "images/chars/reilly/reilly_mad.png",
             (30,0), "reilly_blink",
             )
-            img_alignR
-image side reilly proud = Image("chars/reilly/reilly proud.png", xalign=0.0, yalign=1.0)
-image side reilly surprised = Image("chars/reilly/reilly surprised.png", xalign=0.0, yalign=1.0)
-image side reilly doomed = Image("chars/reilly/reilly doomed.png", xalign=0.0, yalign=1.0)
-image side reilly worried = Image("chars/reilly/reilly worried.png", xalign=0.0, yalign=1.0)
-image side reilly shy = Image("chars/reilly/reilly shy.png", xalign=0.0, yalign=1.0)
-image side reilly fool = Image("chars/reilly/reilly fool.png", xalign=0.0, yalign=1.0)
-image side reilly thinking = Image("chars/reilly/reilly thinking.png", xalign=0.0, yalign=1.0)
+            img_align
+image side reilly proud:
+    contains:
+            LiveComposite (
+            (345,443),
+            (30,0), "images/chars/reilly/reilly_body.png",
+            (30,0), "images/chars/reilly/reilly_proud.png",
+            )
+            img_align
+image side reilly surprised:
+    contains:
+            LiveComposite (
+            (345,443),
+            (30,0), "images/chars/reilly/reilly_body.png",
+            (30,0), "images/chars/reilly/reilly_surprised.png",
+            (30,0), "reilly_blink",
+            )
+            img_align
+image side reilly doomed:
+    contains:
+            LiveComposite (
+            (345,443),
+            (30,0), "images/chars/reilly/reilly_body.png",
+            (30,0), "images/chars/reilly/reilly_doomed.png",
+            )
+            img_align
+image side reilly worried:
+    contains:
+            LiveComposite (
+            (345,443),
+            (30,0), "images/chars/reilly/reilly_body.png",
+            (30,0), "images/chars/reilly/reilly_worried.png",
+            (30,0), "reilly_blink",
+            )
+            img_align
+image side reilly shy:
+    contains:
+            LiveComposite (
+            (345,443),
+            (30,0), "images/chars/reilly/reilly_body.png",
+            (30,0), "images/chars/reilly/reilly_shy.png",
+            (30,0), "reilly_blink",
+            )
+            img_align
+image side reilly fool:
+    contains:
+            LiveComposite (
+            (345,443),
+            (30,0), "images/chars/reilly/reilly_body.png",
+            (30,0), "images/chars/reilly/reilly_fool.png",
+            )
+            img_align
+image side reilly thinking:
+    contains:
+            LiveComposite (
+            (345,443),
+            (30,0), "images/chars/reilly/reilly_body.png",
+            (30,0), "images/chars/reilly/reilly_thinking.png",
+            )
+            img_align
 transform change_transform(old, new):
     contains:
         old
