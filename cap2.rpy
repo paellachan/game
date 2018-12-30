@@ -15,6 +15,8 @@ label capitulo2:
     scene bg_policestation at my_shake
     show victoria readingcar
     show reilly car
+    show parabrisas at my_shake
+    show rain
     md "{i}Victoria revisa unos informes en silencio. No ha dicho una palabra desde que salimos de comisaría.{/i}"
     scene bg_policestation at my_shake
     show victoria readingcar

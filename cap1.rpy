@@ -225,7 +225,7 @@ label continuar:
     wr "..."
     wr "I see."
     show victoria okay
-    with dissolveá
+    with dissolve
     wr "But..."
     show victoria thinking
     with dissolve
@@ -371,26 +371,27 @@ label continuar:
     pause 2
     scene black with Dissolve(2.0, hard=True)
     screen slow_text( txt ):
-        add Text(txt, slow_cps=12) xalign 0.5 yalign 0.5
+        add Text(txt, slow_cps=40) xalign 0.5 yalign 0.5
     play driving "audio_rain.ogg" fadeout 1.0 fadein 4.0
     $ renpy.pause(4, hard=True)
     show screen slow_text('No sé que era...')
-    $ renpy.pause(4, hard=True)
+    $ renpy.pause(3, hard=True)
+    hide screen slow_text
     show screen slow_text('Quizá me había levantado con el pie izquierdo aquel día.')
-    $ renpy.pause(4, hard=True)
-    hide text with dissolve
+    $ renpy.pause(5, hard=True)
+    hide screen slow_text
     show screen slow_text('Quizá aquella lluvia incesante era algún tipo de presagio')
-    $ renpy.pause(4, hard=True)
-    hide text with dissolve
-    show text "No sé muy bien como, aquella noche me vi envuelto en algo más turbio de lo que en un principio había imaginado." at truecenter
-    $ renpy.pause(4, hard=True)
-    hide text with dissolve
+    $ renpy.pause(5, hard=True)
+    hide screen slow_text
+    show screen slow_text('No sé muy bien como, aquella noche me vi envuelto en algo más turbio de lo que en un principio había imaginado.')
+    $ renpy.pause(5, hard=True)
+    hide screen slow_text
     stop music fadeout 3.0
-    $ renpy.pause(4, hard=True)
-    show text "West District Commissary, 8:46 P.M." at truecenter
+    $ renpy.pause(2, hard=True)
+    show screen slow_text('West District Commissary, 8:46 P.M.')
     with dissolve
     $ renpy.pause(4, hard=True)
-    hide text
+    hide screen slow_text
     with dissolve
     jump capitulo2
     return

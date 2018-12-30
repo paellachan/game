@@ -4,7 +4,7 @@
 init:
 
     image rainh:
-    
+
         "fx/rain1_house.png"
         0.2
         "fx/rain3_house.png"
@@ -37,6 +37,9 @@ init:
         yalign 1.0
         pause 2
         easein 1.5 xpos 0
+init:
+    transform carpos:
+        linear 0.01 xpos 0 yalign 1.0
 
 ################################################################
 # tremble
@@ -72,3 +75,18 @@ init:
         "fx/parabrisas1.png"
         3.0
         repeat
+################################################################
+# trans psj
+################################################################
+
+init:
+    transform cleft:
+        linear 0.01 xpos 500 yalign 1.0
+init:
+    transform cright:
+        linear 0.01 xpos 750 ypos 300
+################################################################
+# FLASH
+################################################################
+init:
+    define flash = Fade(.25, 0.0, .75, color="#fff")

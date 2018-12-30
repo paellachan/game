@@ -89,7 +89,53 @@ image victoria thinkingumb:
         (0,0), "images/chars/wright/victoria_thinking.png",
         (0,0), "victoria_blink",
         )
+image victoria normalumb:
+    LiveComposite (
+        (922,1093),
+        (0,0), "images/chars/wright/victoria_body_rain.png",
+        (0,0), "images/chars/wright/victoria_normal.png",
+        (0,0), "victoria_blink",
+        )
+image victoria smileumb:
+    LiveComposite (
+        (922,1093),
+        (0,0), "images/chars/wright/victoria_body_rain.png",
+        (0,0), "images/chars/wright/victoria_surprised.png",
+        (0,0), "victoria_blink",
+        )
+image victoria seriousumb:
+    LiveComposite (
+        (922,1093),
+        (0,0), "images/chars/wright/victoria_body_rain.png",
+        (0,0), "images/chars/wright/victoria_serious.png",
+        (0,0), "victoria_blink",
+        )
 
+image victoria shockedumb:
+    LiveComposite (
+        (922,1093),
+        (0,0), "images/chars/wright/victoria_body_rain.png",
+        (0,0), "images/chars/wright/victoria_shocked.png",
+        (0,0), "victoria_blink",
+        )
+image victoria okayumb:
+    LiveComposite (
+        (922,1093),
+        (0,0), "images/chars/wright/victoria_body_rain.png",
+        (0,0), "images/chars/wright/victoria_okay.png",
+        )
+image victoria realizingumb:
+    LiveComposite (
+        (922,1093),
+        (0,0), "images/chars/wright/victoria_body_rain.png",
+        (0,0), "images/chars/wright/victoria_realizing.png",
+        )
+image victoria madumb:
+    LiveComposite (
+        (922,1093),
+        (0,0), "images/chars/wright/victoria_body_rain.png",
+        (0,0), "images/chars/wright/victoria_reading.png",
+        )
 ################################################
 ####Car expressions
 ################################################
@@ -534,3 +580,77 @@ transform change_transform(old, new):
         linear 0.3 alpha 1.0
 
 define config.side_image_change_transform = change_transform
+################################################################
+#Nelly
+################################################################
+####Blinking
+image nelly_blink:
+    choice(5.0):
+        "victoriablank"
+    choice:
+        "nellyblink"
+        pause 0.1
+        "victoriablank"
+
+    choice:
+        "nellyblink"
+        pause 0.1
+        "victoriablank"
+    pause 1.0
+    repeat
+####Body
+image nelly normal:
+    LiveComposite (
+        (458,770),
+        (0,0), "images/chars/nelly/body.png",
+        (0,0), "images/chars/nelly/normal.png",
+        (0,0), "nelly_blink",
+        )
+image nelly doubt:
+    LiveComposite (
+        (458,770),
+        (0,0), "images/chars/nelly/body.png",
+        (0,0), "images/chars/nelly/doubt.png",
+        (0,0), "nelly_blink",
+        )
+image nelly huh:
+    LiveComposite (
+        (458,770),
+        (0,0), "images/chars/nelly/body.png",
+        (0,0), "images/chars/nelly/huh.png",
+        (0,0), "nelly_blink",
+        )
+image nelly mad:
+    LiveComposite (
+        (458,770),
+        (0,0), "images/chars/nelly/body.png",
+        (0,0), "images/chars/nelly/mad.png",
+        (0,0), "nelly_blink",
+        )
+image nelly shocked:
+    LiveComposite (
+        (458,770),
+        (0,0), "images/chars/nelly/body.png",
+        (0,0), "images/chars/nelly/shocked.png",
+        (0,0), "nelly_blink",
+        )
+image nelly smile:
+    LiveComposite (
+        (458,770),
+        (0,0), "images/chars/nelly/body.png",
+        (0,0), "images/chars/nelly/smile.png",
+        )
+image nelly surprised:
+    LiveComposite (
+        (458,770),
+        (0,0), "images/chars/nelly/body.png",
+        (0,0), "images/chars/nelly/surprised.png",
+        (0,0), "nelly_blink",
+        )
+image nelly troubled:
+    LiveComposite (
+        (458,770),
+        (0,0), "images/chars/nelly/body.png",
+        (0,0), "images/chars/nelly/troubled.png",
+        (0,0), "nelly_blink",
+        )
