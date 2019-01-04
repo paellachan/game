@@ -157,11 +157,16 @@ label evidences1:
     hide victoria with dissolve
     pause 1
     md worried"..."
+    stop driving fadeout 3.0
+    stop music fadeout 2.0
+    window hide
+    pause 2
     # $ InventoryAdd("Temp3")
     # $ ItemUpdate(
     #     "Temp3",
     #      image="clue3",
     #      text="I'm replacing this item's text with new information!",
     # )
+    jump capitulo3
 
     return

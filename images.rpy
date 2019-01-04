@@ -599,6 +599,13 @@ image nelly_blink:
     pause 1.0
     repeat
 ####Body
+image nelly sad:
+    LiveComposite (
+        (458,770),
+        (0,0), "images/chars/nelly/body.png",
+        (0,0), "images/chars/nelly/sad.png",
+        (0,0), "nelly_blink",
+        )
 image nelly normal:
     LiveComposite (
         (458,770),
